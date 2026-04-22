@@ -139,3 +139,16 @@ Bij de meeste regelingen: vóór of tijdens de installatie. Achteraf aanvragen i
 ---
 
 *Klaar om een laadpaal te kopen? Bekijk onze [Top 5 Beste Laadpalen 2026](/beste-laadpaal-thuis) of vraag direct een offerte aan via onze partners.*
+
+---
+
+## Klaar om een laadpaal te laten installeren?
+
+Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:
+
+[Vraag gratis laadpaal-installatie offertes aan →](https://TRADETRACKER-LAADPAAL-OFFERTE-URL)
+
+**Handige producten (via Amazon.nl):**
+- [EV laadkabel Type 2 (5 meter)](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
+- [Energiemeter voor laadpaal monitoring](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
+- [Kabelhaspel voor laadkabel](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)

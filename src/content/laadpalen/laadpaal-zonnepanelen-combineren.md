@@ -150,3 +150,16 @@ Een goede slimme laadpaal heeft een vertraging ingebouwd zodat hij niet bij elke
 ---
 
 *Klaar om te starten? Bekijk de [beste slimme laadpalen van 2026](/beste-laadpaal-thuis) of lees over [subsidies voor je laadpaal](/laadpaal-subsidie-2026).*
+
+---
+
+## Klaar om een laadpaal te laten installeren?
+
+Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:
+
+[Vraag gratis laadpaal-installatie offertes aan →](https://TRADETRACKER-LAADPAAL-OFFERTE-URL)
+
+**Handige producten (via Amazon.nl):**
+- [EV laadkabel Type 2 (5 meter)](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
+- [Energiemeter voor laadpaal monitoring](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
+- [Kabelhaspel voor laadkabel](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
