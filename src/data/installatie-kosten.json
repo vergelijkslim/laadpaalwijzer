@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "beschrijving": "Kostenschattingen voor installatie van thuislaadpalen in Nederland",
+    "bijgewerkt": "2026-04-22",
+    "bronnen": [
+      "ISSO publicaties elektrotechnische installaties",
+      "Eneco en Vattenfall installateur tarieven 2025",
+      "EV-rijders.nl community ervaringen",
+      "Laadpaleninstallateurs.nl offertedata"
+    ]
+  },
+  "arbeidskosten": {
+    "uurloon_installateur_eur": 85,
+    "uurloon_installateur_range_eur": {"min": 70, "max": 110},
+    "gemiddelde_installatietijd_uren": 2.5,
+    "installatietijd_range_uren": {"min": 1.5, "max": 5},
+    "opmerkingen": "Standaard installatie op ideale locatie (meter dicht bij gevel, korte kabelroute). Langere kabelroutes of complicaties verhogen de tijd."
+  },
+  "bekabeling": {
+    "kabelprijs_per_meter_eur": 3.50,
+    "kabeltype": "3-fase 5x4mm² of 5x6mm²",
+    "gemiddelde_kabellengte_meter": 8,
+    "kabellengte_range_meter": {"min": 3, "max": 25},
+    "opmerkingen": "Prijs inclusief mantelkabel en kabelgoten/buizen. 6mm² kabel voor 3-fase 22kW aansluitingen."
+  },
+  "vaste_kosten_componenten": {
+    "groepenverdeler_aanpassing_eur": 150,
+    "aardlekschakelaar_eur": 80,
+    "kabelgoot_per_meter_eur": 5,
+    "wanddoorvoer_eur": 30,
+    "opmerkingen": "Prijzen zijn richtprijzen exclusief BTW"
+  },
+  "groepverzwaring": {
+    "noodzakelijk_wanneer": "Wanneer de bestaande elektriciteitsaansluiting onvoldoende capaciteit heeft voor de laadpaal. Typisch bij 1-fase aansluitingen of aansluiting ≤ 25A.",
+    "kosten_1fase_naar_3fase_eur": {"min": 800, "max": 2500},
+    "kosten_verzwaring_amperage_eur": {"min": 300, "max": 800},
+    "doorlooptijd_netbeheerder_weken": {"min": 2, "max": 12},
+    "netbeheerders": ["Liander", "Stedin", "Enexis", "Coteq", "Westland Infra"],
+    "opmerkingen": "Groepsverzwaring via netbeheerder is verplicht als de aansluiting te zwak is. Dit is los van de installatiekosten van de laadpaal zelf."
+  },
+  "scenario_kostenschattingen": [
+    {
+      "scenario": "Eenvoudige installatie",
+      "beschrijving": "Meterkast vlak bij de gevel, korte kabelroute (< 5m), bestaande 3-fase aansluiting voldoende",
+      "totale_kosten_eur": {"min": 350, "max": 600},
+      "inclusief": ["Arbeidskosten 2u", "Kabel 5m", "Aardlekschakelaar", "Wanddoorvoer"]
+    },
+    {
+      "scenario": "Standaard installatie",
+      "beschrijving": "Kabelroute 5-15m, kleine aanpassingen aan groepenkast, 3-fase beschikbaar",
+      "totale_kosten_eur": {"min": 600, "max": 1000},
+      "inclusief": ["Arbeidskosten 3u", "Kabel 10m", "Kabelgoot", "Aardlekschakelaar", "Wanddoorvoer"]
+    },
+    {
+      "scenario": "Complexe installatie",
+      "beschrijving": "Lange kabelroute (> 15m), aanpassingen meterkast, door muren/vloeren",
+      "totale_kosten_eur": {"min": 1000, "max": 1800},
+      "inclusief": ["Arbeidskosten 4-5u", "Kabel 20m+", "Kabelgoot", "Aanpassing groepenkast", "Extra materiaal"]
+    },
+    {
+      "scenario": "Met groepverzwaring",
+      "beschrijving": "Nieuwe 3-fase aansluiting aanvragen bij netbeheerder vereist",
+      "totale_kosten_eur": {"min": 1800, "max": 4000},
+      "inclusief": ["Alle bovenstaande kosten", "Verzwaring aansluiting via netbeheerder", "Extra wachttijd"]
+    }
+  ],
+  "besparingstips": [
+    "Combineer met zonnepaneel installatie voor gedeelde installatiekosten",
+    "Vraag meerdere offertes aan via laadpaleninstallateurs.nl",
+    "Controleer of installateur erkend is (SEEH-subsidie vereist erkend installateur)",
+    "Vraag of smart laadpaal vereist is voor gemeentelijke subsidie"
+  ]
+}
