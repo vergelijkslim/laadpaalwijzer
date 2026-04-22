@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const gidsen = (await getCollection('laadpalen'))
+  .filter((a) => !a.data.draft && a.data.type === 'guide')
+  .sort((a, b) => {
+    const dateA = a.data.publish_date ?? new Date(0);
+    const dateB = b.data.publish_date ?? new Date(0);
+    return dateB.valueOf() - dateA.valueOf();
+  });
+---
+
+<BaseLayout title="Gidsen & Advies over Laadpalen" description="Uitgebreide gidsen over thuislaadpalen: kosten, subsidies, installatie en slim laden.">
+  <section class="articles-page">
+    <div class="container">
+      <h1>Gidsen & Advies</h1>
+      <p class="page-intro">Uitgebreide handleidingen over kosten, subsidies en installatie van thuislaadpalen.</p>
+
+      {gidsen.length === 0 && (
+        <p class="empty">Er zijn nog geen gidsen gepubliceerd. Kom binnenkort terug!</p>
+      )}
+
+      <div class="articles-grid">
+        {gidsen.map((article) => (
+          <a href={`/laadpalen/${article.id}/`} class="article-card">
+            <span class="badge badge-primary">Gids</span>
+            <h2>{article.data.title}</h2>
+            <p>{article.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .articles-page { padding: 3rem 0; }
+  .articles-page h1 { margin-bottom: 0.5rem; }
+  .page-intro { color: var(--color-text-light); margin-bottom: 2.5rem; }
+  .empty { color: var(--color-text-muted); font-style: italic; }
+  .articles-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+  @media (min-width: 640px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .articles-grid { grid-template-columns: repeat(3, 1fr); } }
+  .article-card {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding: 1.5rem; border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg); color: var(--color-text);
+    transition: all var(--transition-base);
+  }
+  .article-card:hover { text-decoration: none; box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .article-card h2 { font-family: var(--font-sans); font-size: 1.0625rem; font-weight: 600; line-height: 1.4; }
+  .article-card p { color: var(--color-text-light); font-size: 0.875rem; line-height: 1.6; flex: 1; }
+  .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+  .badge-primary { background: #dbeafe; color: #1d4ed8; }
+</style>
