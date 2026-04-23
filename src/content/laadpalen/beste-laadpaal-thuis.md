@@ -93,7 +93,7 @@ De installatie is relatief eenvoudig dankzij het compacte formaat en de meegelev
 ### Voor wie?
 De Easee Home is de beste keuze voor wie een toekomstbestendige, slimme laadpaal wil met uitstekende software en een strak design. Ideaal in combinatie met zonnepanelen en een dynamisch energiecontract.
 
-→ [Vraag een offerte aan voor de Easee Home](/offerte?product=easee-home)
+→ [Vraag een offerte aan voor de Easee Home](/offerte?product=easee-home) | [Lees onze uitgebreide Easee Home review](/laadpalen/easee-home-review)
 
 ---
 
