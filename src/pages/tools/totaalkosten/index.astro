@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import evModellen from '../../../data/ev-modellen.json';
+
+const modellen = evModellen.ev_modellen;
+---
+
+<BaseLayout
+  title="Totaalkosten Calculator — Thuis Laden vs Publiek vs Benzine"
+  description="Bereken je maandelijkse laadkosten. Vergelijk thuis laden, publiek laden en benzine. Ontdek hoeveel je bespaart met een thuislaadpaal."
+>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" is:inline></script>
+
+  <main class="tool-page">
+    <div class="container">
+      <div class="tool-header">
+        <a href="/tools/" class="back-link">← Alle tools</a>
+        <h1>Totaalkosten Calculator</h1>
+        <p class="tool-intro">Bereken exact wat thuisladen kost en hoeveel je bespaart ten opzichte van publiek laden of benzine rijden.</p>
+      </div>
+
+      <div class="calc-layout">
+        <div class="calc-inputs card">
+          <h2>Jouw situatie</h2>
+
+          <div class="field-group">
+            <label for="autoModel">Auto model</label>
+            <select id="autoModel">
+              <option value="">— Kies je auto —</option>
+              {modellen.map((m) => (
+                <option value={m.id} data-verbruik={m.verbruik_kwh_per_100km} data-merk={m.merk} data-model={m.model}>
+                  {m.merk} {m.model} ({m.verbruik_kwh_per_100km} kWh/100km)
+                </option>
+              ))}
+              <option value="custom">Anders (vul zelf in)</option>
+            </select>
+          </div>
+
+          <div class="field-group" id="customVerbruikGroup" style="display:none;">
+            <label for="customVerbruik">Verbruik (kWh/100km)</label>
+            <input type="number" id="customVerbruik" value="16" min="8" max="35" step="0.1" />
+          </div>
+
+          <div class="field-group">
+            <label for="kmPerDag">Kilometers per dag</label>
+            <input type="range" id="kmPerDag" min="10" max="200" value="50" step="5" />
+            <output id="kmOutput">50 km/dag</output>
+          </div>
+
+          <div class="field-group">
+            <label for="stroomprijs">Stroomtarief thuis (€/kWh)</label>
+            <input type="number" id="stroomprijs" value="0.32" min="0.10" max="0.60" step="0.01" />
+            <small>Gemiddeld NL 2026: €0,28–€0,38</small>
+          </div>
+
+          <div class="field-group">
+            <label for="zonnepanelen">Zonnepanelen?</label>
+            <div class="toggle-row">
+              <button class="toggle-btn active" id="btnGeenZon" type="button">Nee</button>
+              <button class="toggle-btn" id="btnWelZon" type="button">Ja</button>
+            </div>
+          </div>
+
+          <div class="field-group" id="zonPercentGroup" style="display:none;">
+            <label for="zonPercent">% laden met zonne-energie</label>
+            <input type="range" id="zonPercent" min="10" max="80" value="40" step="5" />
+            <output id="zonOutput">40%</output>
+          </div>
+
+          <button class="btn-calc" id="btnCalc" type="button">Bereken kosten →</button>
+        </div>
+
+        <div class="calc-results card" id="results" style="display:none;">
+          <h2>Resultaat</h2>
+
+          <div class="result-highlight" id="highlight"></div>
+
+          <div class="chart-container">
+            <canvas id="kostenChart" height="280"></canvas>
+          </div>
+
+          <div class="cost-breakdown" id="breakdown"></div>
+
+          <div class="terugverdien" id="terugverdien"></div>
+
+          <div class="result-cta">
+            <p>Klaar om te besparen?</p>
+            <a href="/tools/vergelijk/" class="btn-primary">Vergelijk laadpalen →</a>
+            <a href="/tools/subsidie/" class="btn-secondary">Check subsidies →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline define:vars={{ modellen }}>
+    const kmSlider = document.getElementById('kmPerDag');
+    const kmOutput = document.getElementById('kmOutput');
+    const zonSlider = document.getElementById('zonPercent');
+    const zonOutput = document.getElementById('zonOutput');
+    const autoSelect = document.getElementById('autoModel');
+    const customGroup = document.getElementById('customVerbruikGroup');
+    const btnGeenZon = document.getElementById('btnGeenZon');
+    const btnWelZon = document.getElementById('btnWelZon');
+    const zonGroup = document.getElementById('zonPercentGroup');
+
+    let heeftZon = false;
+    let chart = null;
+
+    kmSlider.addEventListener('input', () => { kmOutput.textContent = kmSlider.value + ' km/dag'; });
+    zonSlider.addEventListener('input', () => { zonOutput.textContent = zonSlider.value + '%'; });
+
+    autoSelect.addEventListener('change', () => {
+      customGroup.style.display = autoSelect.value === 'custom' ? 'block' : 'none';
+    });
+
+    btnGeenZon.addEventListener('click', () => {
+      heeftZon = false;
+      btnGeenZon.classList.add('active');
+      btnWelZon.classList.remove('active');
+      zonGroup.style.display = 'none';
+    });
+    btnWelZon.addEventListener('click', () => {
+      heeftZon = true;
+      btnWelZon.classList.add('active');
+      btnGeenZon.classList.remove('active');
+      zonGroup.style.display = 'block';
+    });
+
+    document.getElementById('btnCalc').addEventListener('click', calculate);
+
+    function getVerbruik() {
+      if (autoSelect.value === 'custom') {
+        return parseFloat(document.getElementById('customVerbruik').value) || 16;
+      }
+      const opt = autoSelect.selectedOptions[0];
+      return parseFloat(opt?.dataset?.verbruik) || 16;
+      }
+
+    function calculate() {
+      const verbruik = getVerbruik();
+      const kmDag = parseInt(kmSlider.value);
+      const stroomprijs = parseFloat(document.getElementById('stroomprijs').value);
+      const zonPct = heeftZon ? parseInt(zonSlider.value) / 100 : 0;
+
+      const kmMaand = kmDag * 30;
+      const kwhMaand = (verbruik / 100) * kmMaand;
+
+      // Thuis laden
+      const kwhZon = kwhMaand * zonPct;
+      const kwhNet = kwhMaand - kwhZon;
+      const kostenThuis = kwhNet * stroomprijs; // zon-stroom is ~gratis
+
+      // Publiek laden (gemiddeld NL tarief)
+      const tariefPubliek = 0.55;
+      const kostenPubliek = kwhMaand * tariefPubliek;
+
+      // Benzine equivalent
+      const verbruikBenzine = 7.0; // l/100km gemiddeld
+      const benzinePrijs = 2.10; // €/l
+      const kostenBenzine = (verbruikBenzine / 100) * kmMaand * benzinePrijs;
+
+      // Besparing
+      const besparingVsPubliek = kostenPubliek - kostenThuis;
+      const besparingVsBenzine = kostenBenzine - kostenThuis;
+
+      // Terugverdientijd laadpaal
+      const gemPrijsLaadpaal = 900; // gemiddelde thuislaadpaal
+      const terugverdienMaanden = besparingVsPubliek > 0 ? Math.ceil(gemPrijsLaadpaal / besparingVsPubliek) : 999;
+
+      // Display
+      document.getElementById('results').style.display = 'block';
+
+      document.getElementById('highlight').innerHTML = `
+        <div class="highlight-card green">
+          <span class="hl-label">Thuis laden</span>
+          <span class="hl-value">€${kostenThuis.toFixed(0)}/mnd</span>
+          ${heeftZon ? `<span class="hl-note">${Math.round(zonPct*100)}% gratis via zon</span>` : ''}
+        </div>
+        <div class="highlight-card gray">
+          <span class="hl-label">Publiek laden</span>
+          <span class="hl-value">€${kostenPubliek.toFixed(0)}/mnd</span>
+          <span class="hl-note">€0,55/kWh gemiddeld</span>
+        </div>
+        <div class="highlight-card orange">
+          <span class="hl-label">Benzine equivalent</span>
+          <span class="hl-value">€${kostenBenzine.toFixed(0)}/mnd</span>
+          <span class="hl-note">7 l/100km · €2,10/l</span>
+        </div>
+      `;
+
+      document.getElementById('breakdown').innerHTML = `
+        <h3>Detailoverzicht</h3>
+        <table class="breakdown-table">
+          <tr><td>Kilometers per maand</td><td><strong>${kmMaand.toLocaleString('nl-NL')} km</strong></td></tr>
+          <tr><td>Stroomverbruik per maand</td><td><strong>${kwhMaand.toFixed(0)} kWh</strong></td></tr>
+          ${heeftZon ? `<tr><td>Waarvan via zonnepanelen</td><td><strong>${kwhZon.toFixed(0)} kWh (gratis)</strong></td></tr>` : ''}
+          <tr class="highlight-row"><td>Besparing vs publiek laden</td><td><strong class="green">€${besparingVsPubliek.toFixed(0)}/mnd</strong></td></tr>
+          <tr class="highlight-row"><td>Besparing vs benzine</td><td><strong class="green">€${besparingVsBenzine.toFixed(0)}/mnd</strong></td></tr>
+        </table>
+      `;
+
+      document.getElementById('terugverdien').innerHTML = terugverdienMaanden < 100
+        ? `<div class="tv-card"><span class="tv-icon">📈</span><div><strong>Terugverdientijd laadpaal</strong><p>Bij een gemiddelde laadpaal van €${gemPrijsLaadpaal} verdien je de aanschaf in <strong>${terugverdienMaanden} maanden</strong> terug ten opzichte van publiek laden.</p></div></div>`
+        : '';
+
+      // Chart
+      if (chart) chart.destroy();
+      const ctx = document.getElementById('kostenChart').getContext('2d');
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Thuis laden', 'Publiek laden', 'Benzine'],
+          datasets: [{
+            label: 'Kosten per maand (€)',
+            data: [kostenThuis, kostenPubliek, kostenBenzine],
+            backgroundColor: ['#16a34a', '#6b7280', '#ea580c'],
+            borderRadius: 8,
+            barThickness: 60
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: (c) => '€' + c.parsed.y.toFixed(0) + '/maand' } }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { callback: (v) => '€' + v } }
+          }
+        }
+      });
+
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+  <style>
+    .tool-page { padding: 2rem 0 4rem; }
+    .tool-header { margin-bottom: 2rem; }
+    .back-link { color: var(--color-text-light); font-size: 0.875rem; }
+    .tool-header h1 { margin: 0.5rem 0 0.5rem; font-size: 2rem; }
+    .tool-intro { color: var(--color-text-light); font-size: 1.05rem; margin: 0; }
+
+    .calc-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 2rem; }
+    .card h2 { margin: 0 0 1.5rem; font-size: 1.3rem; }
+
+    .field-group { margin-bottom: 1.25rem; }
+    .field-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem; color: #374151; }
+    .field-group select, .field-group input[type="number"] {
+      width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #d1d5db; border-radius: 8px;
+      font-size: 0.95rem; background: white;
+    }
+    .field-group input[type="range"] { width: 100%; margin: 0.25rem 0; accent-color: #16a34a; }
+    .field-group output { display: block; text-align: center; font-weight: 700; color: #16a34a; font-size: 1.1rem; }
+    .field-group small { display: block; color: #9ca3af; font-size: 0.8rem; margin-top: 0.25rem; }
+
+    .toggle-row { display: flex; gap: 0.5rem; }
+    .toggle-btn {
+      flex: 1; padding: 0.5rem; border: 2px solid #d1d5db; border-radius: 8px;
+      background: white; cursor: pointer; font-weight: 600; font-size: 0.9rem;
+      transition: all 0.15s;
+    }
+    .toggle-btn.active { border-color: #16a34a; background: #f0fdf4; color: #16a34a; }
+
+    .btn-calc {
+      width: 100%; padding: 0.85rem; background: #16a34a; color: white;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .btn-calc:hover { background: #15803d; }
+
+    .highlight-card {
+      display: flex; flex-direction: column; align-items: center;
+      padding: 1.25rem; border-radius: 12px; text-align: center;
+    }
+    .highlight-card.green { background: #f0fdf4; border: 2px solid #16a34a; }
+    .highlight-card.gray { background: #f9fafb; border: 2px solid #e5e7eb; }
+    .highlight-card.orange { background: #fff7ed; border: 2px solid #ea580c; }
+    .hl-label { font-size: 0.8rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+    .hl-value { font-size: 2rem; font-weight: 800; color: #111827; margin: 0.25rem 0; }
+    .hl-note { font-size: 0.8rem; color: #9ca3af; }
+
+    #highlight { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+
+    .chart-container { margin-bottom: 2rem; }
+
+    .breakdown-table { width: 100%; border-collapse: collapse; }
+    .breakdown-table td { padding: 0.6rem 0; border-bottom: 1px solid #f3f4f6; font-size: 0.9rem; }
+    .breakdown-table td:last-child { text-align: right; }
+    .highlight-row td { border-bottom: 2px solid #dcfce7; }
+    .green { color: #16a34a; }
+
+    .tv-card {
+      display: flex; gap: 1rem; align-items: flex-start;
+      background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px;
+      padding: 1.25rem; margin: 1.5rem 0;
+    }
+    .tv-icon { font-size: 2rem; }
+    .tv-card p { margin: 0.25rem 0 0; font-size: 0.9rem; color: #374151; }
+
+    .result-cta { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
+    .result-cta p { margin: 0 0 1rem; font-weight: 600; }
+    .btn-primary {
+      display: inline-block; padding: 0.75rem 1.5rem; background: #16a34a; color: white;
+      border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.5rem;
+    }
+    .btn-secondary {
+      display: inline-block; padding: 0.75rem 1.5rem; border: 2px solid #16a34a; color: #16a34a;
+      border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      #highlight { grid-template-columns: 1fr; }
+      .hl-value { font-size: 1.5rem; }
+    }
+  </style>
+</BaseLayout>

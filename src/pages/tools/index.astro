@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Laadpaal Tools — Calculators, Vergelijker en Subsidie Checker"
+  description="Gratis tools voor thuisladen. Bereken laadkosten, check subsidies, vergelijk laadpalen en configureer je installatie."
+>
+  <section class="tools-hero">
+    <div class="container">
+      <h1>Laadpaal Tools</h1>
+      <p>Interactieve tools om de juiste laadpaal te kiezen — gratis, geen registratie vereist.</p>
+    </div>
+  </section>
+
+  <section class="tools-grid-section">
+    <div class="container">
+      <div class="tools-grid">
+        <a href="/tools/totaalkosten/" class="tool-card featured">
+          <div class="tool-icon">⚡</div>
+          <div class="tool-info">
+            <span class="tool-badge">Populairste tool</span>
+            <h2>Totaalkosten Calculator</h2>
+            <p>Bereken je maandelijkse laadkosten. Vergelijk thuis laden vs publiek laden vs benzine. Ontdek hoeveel je bespaart.</p>
+            <span class="tool-cta">Bereken kosten →</span>
+          </div>
+        </a>
+        <a href="/tools/subsidie/" class="tool-card">
+          <div class="tool-icon">💰</div>
+          <div class="tool-info">
+            <h2>Subsidie Checker</h2>
+            <p>Check welke subsidies jij kunt krijgen voor een thuislaadpaal. Landelijk + gemeentelijk overzicht.</p>
+            <span class="tool-cta">Check subsidies →</span>
+          </div>
+        </a>
+        <a href="/tools/vergelijk/" class="tool-card">
+          <div class="tool-icon">📊</div>
+          <div class="tool-info">
+            <h2>Laadpalen Vergelijken</h2>
+            <p>Sorteerbare en filterbare tabel met alle thuislaadpalen. Filter op vermogen, prijs, smart features.</p>
+            <span class="tool-cta">Vergelijk nu →</span>
+          </div>
+        </a>
+        <a href="/tools/installatie/" class="tool-card">
+          <div class="tool-icon">🔧</div>
+          <div class="tool-info">
+            <h2>Installatie Configurator</h2>
+            <p>Bereken de installatiekosten op basis van jouw situatie: kabellengte, groepverzwaring en meer.</p>
+            <span class="tool-cta">Configureer →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tools-hero {
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+    color: white; padding: 3rem 0 2rem; text-align: center;
+  }
+  .tools-hero h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+  .tools-hero p { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+  .tools-grid-section { padding: 3rem 0; }
+  .tools-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 700px; margin: 0 auto; }
+
+  .tool-card {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    background: white; border: 2px solid #e5e7eb; border-radius: 16px;
+    padding: 1.75rem; text-decoration: none; color: inherit;
+    transition: all 0.15s;
+  }
+  .tool-card:hover { border-color: #16a34a; box-shadow: 0 4px 16px rgba(22,163,74,0.1); }
+  .tool-card.featured { border-color: #16a34a; background: #f0fdf4; }
+
+  .tool-icon { font-size: 2.5rem; flex-shrink: 0; }
+  .tool-info { flex: 1; }
+  .tool-badge {
+    display: inline-block; background: #16a34a; color: white;
+    font-size: 0.72rem; font-weight: 700; padding: 2px 10px; border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+  .tool-info h2 { margin: 0 0 0.5rem; font-size: 1.2rem; color: #111827; }
+  .tool-info p { margin: 0 0 0.75rem; font-size: 0.9rem; color: #6b7280; line-height: 1.5; }
+  .tool-cta { font-size: 0.9rem; font-weight: 700; color: #16a34a; }
+</style>

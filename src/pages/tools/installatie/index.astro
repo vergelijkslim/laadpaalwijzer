@@ -1,0 +1,286 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import kostenData from '../../../data/installatie-kosten.json';
+
+const scenarios = kostenData.scenario_kostenschattingen;
+---
+
+<BaseLayout
+  title="Installatie Configurator — Bereken Installatiekosten Laadpaal"
+  description="Bereken de installatiekosten van een thuislaadpaal op basis van jouw situatie. Kabellengte, groepverzwaring en meer."
+>
+  <main class="tool-page">
+    <div class="container">
+      <div class="tool-header">
+        <a href="/tools/" class="back-link">← Alle tools</a>
+        <h1>Installatie Configurator</h1>
+        <p class="tool-intro">Bereken wat de installatie van een thuislaadpaal bij jou thuis gaat kosten.</p>
+      </div>
+
+      <div class="config-layout">
+        <div class="config-inputs card">
+          <h2>Jouw situatie</h2>
+
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <label>Waar staat je meterkast?</label>
+              <div class="option-grid">
+                <button class="opt-btn active" data-group="meterkast" data-val="voorkant" type="button">
+                  <span class="opt-icon">🏠</span>Voorkant huis
+                </button>
+                <button class="opt-btn" data-group="meterkast" data-val="achterkant" type="button">
+                  <span class="opt-icon">🏡</span>Achterkant huis
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <label>Waar wil je de laadpaal?</label>
+              <div class="option-grid">
+                <button class="opt-btn active" data-group="locatie" data-val="oprit" type="button">
+                  <span class="opt-icon">🅿️</span>Oprit
+                </button>
+                <button class="opt-btn" data-group="locatie" data-val="garage" type="button">
+                  <span class="opt-icon">🚗</span>Garage
+                </button>
+                <button class="opt-btn" data-group="locatie" data-val="carport" type="button">
+                  <span class="opt-icon">🏕️</span>Carport
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <label for="kabelAfstand">Geschatte kabelafstand (meter)</label>
+              <input type="range" id="kabelAfstand" min="2" max="30" value="8" step="1" />
+              <output id="kabelOutput">8 meter</output>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <label>Groepverzwaring nodig?</label>
+              <div class="option-grid triple">
+                <button class="opt-btn" data-group="verzwaring" data-val="nee" type="button">
+                  <span class="opt-icon">✅</span>Nee
+                </button>
+                <button class="opt-btn active" data-group="verzwaring" data-val="weet-niet" type="button">
+                  <span class="opt-icon">❓</span>Weet niet
+                </button>
+                <button class="opt-btn" data-group="verzwaring" data-val="ja" type="button">
+                  <span class="opt-icon">⚡</span>Ja
+                </button>
+              </div>
+              <small>Bij 1-fase aansluiting of ≤25A is verzwaring meestal nodig voor een 11kW+ laadpaal</small>
+            </div>
+          </div>
+
+          <button class="btn-calc" id="btnCalc" type="button">Bereken kosten →</button>
+        </div>
+
+        <div class="config-results card" id="results" style="display:none;">
+          <h2>Kostenschatting</h2>
+
+          <div class="total-box" id="totalBox"></div>
+
+          <div class="cost-items" id="costItems"></div>
+
+          <div class="scenario-match" id="scenarioMatch"></div>
+
+          <div class="note-box">
+            <strong>Let op:</strong> Dit is een indicatie. Vraag altijd een offerte aan bij een gecertificeerd installateur voor een exacte prijs.
+          </div>
+
+          <div class="result-cta">
+            <a href="/tools/subsidie/" class="btn-primary">Check subsidies →</a>
+            <a href="/tools/vergelijk/" class="btn-secondary">Kies laadpaal →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline define:vars={{ kostenData, scenarios }}>
+    const answers = { meterkast: 'voorkant', locatie: 'oprit', verzwaring: 'weet-niet' };
+    const kabelSlider = document.getElementById('kabelAfstand');
+    const kabelOutput = document.getElementById('kabelOutput');
+
+    kabelSlider.addEventListener('input', () => { kabelOutput.textContent = kabelSlider.value + ' meter'; });
+
+    document.querySelectorAll('.opt-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group;
+        document.querySelectorAll(`.opt-btn[data-group="${group}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        answers[group] = btn.dataset.val;
+      });
+    });
+
+    document.getElementById('btnCalc').addEventListener('click', calculate);
+
+    function calculate() {
+      const kabelM = parseInt(kabelSlider.value);
+      const uurloon = kostenData.arbeidskosten.uurloon_installateur_eur;
+
+      // Calculate components
+      const items = [];
+
+      // Arbeid
+      let uren = kostenData.arbeidskosten.gemiddelde_installatietijd_uren;
+      if (kabelM > 15) uren += 1;
+      if (answers.locatie === 'garage') uren += 0.5;
+      if (answers.meterkast === 'achterkant' && answers.locatie === 'oprit') uren += 0.5;
+      const arbeid = Math.round(uren * uurloon);
+      items.push({ label: 'Arbeidskosten', detail: `${uren}u × €${uurloon}/u`, cost: arbeid, type: 'fixed' });
+
+      // Kabel
+      const kabelPrijs = kostenData.bekabeling.kabelprijs_per_meter_eur;
+      const kabelTotaal = Math.round(kabelM * kabelPrijs);
+      items.push({ label: 'Bekabeling', detail: `${kabelM}m × €${kabelPrijs}/m`, cost: kabelTotaal, type: 'fixed' });
+
+      // Componenten
+      const comp = kostenData.vaste_kosten_componenten;
+      items.push({ label: 'Aardlekschakelaar', detail: 'Type B (verplicht)', cost: comp.aardlekschakelaar_eur, type: 'fixed' });
+      items.push({ label: 'Groepenkast aanpassing', detail: '', cost: comp.groepenverdeler_aanpassing_eur, type: 'fixed' });
+
+      if (kabelM > 3) {
+        const gootKosten = Math.round((kabelM - 2) * comp.kabelgoot_per_meter_eur);
+        items.push({ label: 'Kabelgoten', detail: `${kabelM - 2}m × €${comp.kabelgoot_per_meter_eur}/m`, cost: gootKosten, type: 'fixed' });
+      }
+
+      items.push({ label: 'Wanddoorvoer', detail: '', cost: comp.wanddoorvoer_eur, type: 'fixed' });
+
+      // Groepverzwaring
+      if (answers.verzwaring === 'ja') {
+        const vzw = kostenData.groepverzwaring;
+        const vzwKosten = Math.round((vzw.kosten_1fase_naar_3fase_eur.min + vzw.kosten_1fase_naar_3fase_eur.max) / 2);
+        items.push({ label: 'Groepverzwaring (1→3 fase)', detail: `Via netbeheerder (${vzw.doorlooptijd_netbeheerder_weken.min}-${vzw.doorlooptijd_netbeheerder_weken.max} weken)`, cost: vzwKosten, type: 'variable' });
+      } else if (answers.verzwaring === 'weet-niet') {
+        items.push({ label: 'Groepverzwaring (mogelijk)', detail: 'Laat je installateur checken', cost: 0, type: 'info' });
+      }
+
+      const total = items.reduce((sum, i) => sum + i.cost, 0);
+      const totalMin = Math.round(total * 0.85);
+      const totalMax = Math.round(total * 1.15);
+
+      document.getElementById('results').style.display = 'block';
+
+      document.getElementById('totalBox').innerHTML = `
+        <div class="total-amount">€${totalMin.toLocaleString('nl-NL')} – €${totalMax.toLocaleString('nl-NL')}</div>
+        <div class="total-label">Geschatte installatiekosten (excl. laadpaal)</div>
+      `;
+
+      document.getElementById('costItems').innerHTML = items.map(i => {
+        if (i.type === 'info') return `<div class="cost-row info"><span>${i.label}</span><span class="cost-note">${i.detail}</span></div>`;
+        return `<div class="cost-row ${i.type}">
+          <span>${i.label} ${i.detail ? `<small>${i.detail}</small>` : ''}</span>
+          <span class="cost-val">€${i.cost.toLocaleString('nl-NL')}</span>
+        </div>`;
+      }).join('') + `<div class="cost-row total"><span>Totaal (indicatie)</span><span class="cost-val">€${total.toLocaleString('nl-NL')}</span></div>`;
+
+      // Match closest scenario
+      const closest = scenarios.reduce((best, s) => {
+        const mid = (s.totale_kosten_eur.min + s.totale_kosten_eur.max) / 2;
+        return Math.abs(mid - total) < Math.abs(best.mid - total) ? { ...s, mid } : best;
+      }, { ...scenarios[0], mid: (scenarios[0].totale_kosten_eur.min + scenarios[0].totale_kosten_eur.max) / 2 });
+
+      document.getElementById('scenarioMatch').innerHTML = `
+        <div class="scenario-card">
+          <strong>Jouw situatie lijkt op: ${closest.scenario}</strong>
+          <p>${closest.beschrijving}</p>
+          <span class="scenario-range">Typisch: €${closest.totale_kosten_eur.min.toLocaleString('nl-NL')} – €${closest.totale_kosten_eur.max.toLocaleString('nl-NL')}</span>
+        </div>
+      `;
+
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
+
+  <style>
+    .tool-page { padding: 2rem 0 4rem; }
+    .tool-header { margin-bottom: 2rem; }
+    .back-link { color: var(--color-text-light); font-size: 0.875rem; }
+    .tool-header h1 { margin: 0.5rem 0 0.5rem; font-size: 2rem; }
+    .tool-intro { color: var(--color-text-light); font-size: 1.05rem; margin: 0; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+    .card h2 { margin: 0 0 1.5rem; font-size: 1.3rem; }
+
+    .config-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; }
+
+    .step { display: flex; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #f3f4f6; }
+    .step:last-of-type { border-bottom: none; }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%; background: #16a34a; color: white;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .step-content { flex: 1; }
+    .step-content label { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.5rem; color: #374151; }
+    .step-content small { display: block; color: #9ca3af; font-size: 0.8rem; margin-top: 0.4rem; }
+    .step-content input[type="range"] { width: 100%; accent-color: #16a34a; }
+    .step-content output { display: block; text-align: center; font-weight: 700; color: #16a34a; font-size: 1.1rem; }
+
+    .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .option-grid.triple { grid-template-columns: 1fr 1fr 1fr; }
+    .opt-btn {
+      display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+      padding: 0.75rem; border: 2px solid #d1d5db; border-radius: 10px;
+      background: white; cursor: pointer; font-weight: 600; font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+    .opt-btn:hover { border-color: #86efac; }
+    .opt-btn.active { border-color: #16a34a; background: #f0fdf4; color: #16a34a; }
+    .opt-icon { font-size: 1.5rem; }
+
+    .btn-calc {
+      width: 100%; padding: 0.85rem; background: #16a34a; color: white;
+      border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; margin-top: 0.5rem;
+    }
+    .btn-calc:hover { background: #15803d; }
+
+    .total-box { text-align: center; margin-bottom: 1.5rem; padding: 1.5rem; background: #f0fdf4; border-radius: 12px; }
+    .total-amount { font-size: 2rem; font-weight: 800; color: #16a34a; }
+    .total-label { font-size: 0.85rem; color: #6b7280; margin-top: 0.25rem; }
+
+    .cost-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.65rem 0; border-bottom: 1px solid #f3f4f6; font-size: 0.9rem;
+    }
+    .cost-row small { display: block; color: #9ca3af; font-size: 0.8rem; }
+    .cost-val { font-weight: 700; }
+    .cost-row.variable { color: #ea580c; }
+    .cost-row.info { color: #6b7280; font-style: italic; }
+    .cost-note { font-size: 0.8rem; }
+    .cost-row.total { border-top: 2px solid #16a34a; border-bottom: none; font-weight: 700; font-size: 1rem; margin-top: 0.5rem; padding-top: 0.75rem; }
+
+    .scenario-card {
+      background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px;
+      padding: 1.25rem; margin-top: 1.5rem;
+    }
+    .scenario-card p { margin: 0.5rem 0; font-size: 0.9rem; color: #374151; }
+    .scenario-range { font-size: 0.85rem; color: #92400e; font-weight: 600; }
+
+    .note-box {
+      background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px;
+      padding: 1rem; margin-top: 1.5rem; font-size: 0.85rem; color: #374151;
+    }
+
+    .result-cta { text-align: center; margin-top: 1.5rem; }
+    .btn-primary {
+      display: inline-block; padding: 0.75rem 1.5rem; background: #16a34a; color: white;
+      border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.5rem;
+    }
+    .btn-secondary {
+      display: inline-block; padding: 0.75rem 1.5rem; border: 2px solid #16a34a; color: #16a34a;
+      border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.5rem;
+    }
+  </style>
+</BaseLayout>

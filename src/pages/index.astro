@@ -61,11 +61,11 @@ const typeLabels: Record<string, string> = {
           </div>
         </div>
         <div class="hero-actions">
-          <a href="/vergelijkingen/" class="btn btn-cta">
+          <a href="/tools/totaalkosten/" class="btn btn-cta">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Vergelijk laadpalen
+            Bereken laadkosten
           </a>
-          <a href="/laadpalen/laadpaal-subsidie-2026/" class="btn btn-ghost">Subsidie berekenen &rarr;</a>
+          <a href="/tools/subsidie/" class="btn btn-ghost">Check subsidies &rarr;</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
@@ -143,6 +143,40 @@ const typeLabels: Record<string, string> = {
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <span>Bijgewerkt april 2026</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS HIGHLIGHT -->
+  <section class="tools-highlight">
+    <div class="container">
+      <div class="tools-header">
+        <span class="section-tag">Gratis tools</span>
+        <h2>Interactieve calculators</h2>
+        <p>Bereken je laadkosten, check subsidies en vergelijk laadpalen — persoonlijk advies op basis van jouw situatie.</p>
+      </div>
+      <div class="tools-cards">
+        <a href="/tools/totaalkosten/" class="tcard featured">
+          <span class="tcard-icon">⚡</span>
+          <span class="tcard-badge">Populairst</span>
+          <h3>Totaalkosten Calculator</h3>
+          <p>Thuis laden vs publiek vs benzine</p>
+        </a>
+        <a href="/tools/subsidie/" class="tcard">
+          <span class="tcard-icon">💰</span>
+          <h3>Subsidie Checker</h3>
+          <p>Check jouw subsidie per gemeente</p>
+        </a>
+        <a href="/tools/vergelijk/" class="tcard">
+          <span class="tcard-icon">📊</span>
+          <h3>Laadpalen Vergelijken</h3>
+          <p>Filter op prijs, vermogen, features</p>
+        </a>
+        <a href="/tools/installatie/" class="tcard">
+          <span class="tcard-icon">🔧</span>
+          <h3>Installatie Configurator</h3>
+          <p>Bereken je installatiekosten</p>
+        </a>
       </div>
     </div>
   </section>
@@ -436,6 +470,30 @@ const typeLabels: Record<string, string> = {
     background: var(--color-border);
   }
   @media (max-width: 600px) { .trust-divider { display: none; } }
+
+  /* TOOLS HIGHLIGHT */
+  .tools-highlight { padding: 3rem 0; background: #f0fdf4; }
+  .tools-header { text-align: center; margin-bottom: 2rem; }
+  .tools-header h2 { margin: 0.5rem 0; font-size: 1.75rem; }
+  .tools-header p { color: var(--color-text-light); font-size: 1rem; margin: 0; }
+  .tools-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .tcard {
+    background: white; border: 2px solid #e5e7eb; border-radius: 14px;
+    padding: 1.5rem; text-decoration: none; color: inherit;
+    text-align: center; transition: all 0.15s; position: relative;
+  }
+  .tcard:hover { border-color: #16a34a; box-shadow: 0 4px 12px rgba(22,163,74,0.1); transform: translateY(-2px); }
+  .tcard.featured { border-color: #16a34a; background: white; }
+  .tcard-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+  .tcard-badge {
+    position: absolute; top: -8px; right: 12px;
+    background: #16a34a; color: white; font-size: 0.68rem; font-weight: 700;
+    padding: 2px 10px; border-radius: 12px;
+  }
+  .tcard h3 { margin: 0 0 0.25rem; font-size: 0.95rem; color: #111827; }
+  .tcard p { margin: 0; font-size: 0.8rem; color: #6b7280; }
+  @media (max-width: 767px) { .tools-cards { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .tools-cards { grid-template-columns: 1fr; } }
 
   /* KEUZEHULP */
   .keuzehulp-section {

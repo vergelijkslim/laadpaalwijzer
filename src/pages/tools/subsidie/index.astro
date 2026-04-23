@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import subsidieData from '../../../data/subsidies.json';
+
+const landelijk = subsidieData.landelijke_subsidies;
+const gemeentelijk = subsidieData.gemeentelijke_subsidies ?? [];
+---
+
+<BaseLayout
+  title="Laadpaal Subsidie Checker — Check Jouw Subsidie"
+  description="Ontdek welke subsidies je kunt krijgen voor een thuislaadpaal. Landelijke en gemeentelijke regelingen op een rij."
+>
+  <main class="tool-page">
+    <div class="container">
+      <div class="tool-header">
+        <a href="/tools/" class="back-link">← Alle tools</a>
+        <h1>Subsidie Checker</h1>
+        <p class="tool-intro">Check welke subsidies jij kunt aanvragen voor een thuislaadpaal. We tonen landelijke en gemeentelijke regelingen.</p>
+      </div>
+
+      <div class="subsidie-total card" id="totalCard">
+        <div class="total-icon">💰</div>
+        <div class="total-info">
+          <span class="total-label">Maximaal beschikbaar (landelijk)</span>
+          <span class="total-value" id="totalValue">—</span>
+          <span class="total-note">Exacte bedragen hangen af van je situatie en gemeente</span>
+        </div>
+      </div>
+
+      <div class="section-card card">
+        <h2>Landelijke subsidies</h2>
+        <p class="section-desc">Deze regelingen gelden in heel Nederland.</p>
+        <div class="subsidie-list" id="landelijkList"></div>
+      </div>
+
+      <div class="section-card card">
+        <h2>Gemeentelijke subsidies</h2>
+        <p class="section-desc">Zoek je gemeente om te zien welke lokale regelingen er zijn.</p>
+        <div class="search-box">
+          <input type="text" id="gemeenteSearch" placeholder="Zoek gemeente..." autocomplete="off" />
+        </div>
+        <div class="subsidie-list" id="gemeentelijkList"></div>
+        <p class="disclaimer" id="gemeenteNone" style="display:none;">Geen specifieke gemeentelijke subsidie gevonden. Neem contact op met je gemeente — er kunnen onvermelde regelingen zijn.</p>
+      </div>
+
+      <div class="tip-card card">
+        <h3>💡 Tips</h3>
+        <ul>
+          <li>Landelijke en gemeentelijke subsidies zijn vaak <strong>combineerbaar</strong></li>
+          <li>Vraag subsidie aan <strong>binnen 1 jaar na installatie</strong></li>
+          <li>Je laadpaal moet voldoen aan de eisen (o.a. MID-meter, professionele installatie)</li>
+          <li>Controleer altijd de actuele voorwaarden op de officiële website</li>
+        </ul>
+      </div>
+
+      <div class="result-cta">
+        <a href="/tools/totaalkosten/" class="btn-primary">Bereken laadkosten →</a>
+        <a href="/tools/vergelijk/" class="btn-secondary">Vergelijk laadpalen →</a>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline define:vars={{ landelijk, gemeentelijk }}>
+    // Render landelijke subsidies
+    let totalLandelijk = 0;
+    const landelijkHtml = landelijk.filter(s => s.status === 'actief').map(s => {
+      totalLandelijk += s.max_bedrag_eur || s.bedrag_eur || 0;
+      const voorwaarden = (s.voorwaarden || []).map(v => `<li>${v}</li>`).join('');
+      return `
+        <div class="subsidie-item">
+          <div class="sub-header">
+            <div>
+              <h3>${s.naam}</h3>
+              <span class="sub-status active">Actief</span>
+            </div>
+            <div class="sub-amount">€${(s.max_bedrag_eur || s.bedrag_eur || 0).toLocaleString('nl-NL')}</div>
+          </div>
+          <p class="sub-desc">${s.doelgroep || ''}</p>
+          ${voorwaarden ? `<details><summary>Voorwaarden</summary><ul>${voorwaarden}</ul></details>` : ''}
+          <div class="sub-footer">
+            <span class="sub-geldig">Geldig t/m ${s.geldig_tot || 'onbekend'}</span>
+            ${s.aanvragen_url ? `<a href="${s.aanvragen_url}" target="_blank" rel="noopener" class="btn-sm">Aanvragen →</a>` : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    document.getElementById('landelijkList').innerHTML = landelijkHtml;
+    document.getElementById('totalValue').textContent = '€' + totalLandelijk.toLocaleString('nl-NL');
+
+    // Gemeentelijke subsidies search
+    const searchInput = document.getElementById('gemeenteSearch');
+    const gemeentelijkList = document.getElementById('gemeentelijkList');
+    const noneMsg = document.getElementById('gemeenteNone');
+
+    function renderGemeentelijk(query) {
+      if (!query || query.length < 2) {
+        gemeentelijkList.innerHTML = '';
+        noneMsg.style.display = 'none';
+        return;
+      }
+      const q = query.toLowerCase();
+      const matches = gemeentelijk.filter(s =>
+        (s.gemeente || '').toLowerCase().includes(q) ||
+        (s.naam || '').toLowerCase().includes(q) ||
+        (s.regio || '').toLowerCase().includes(q)
+      );
+
+      if (matches.length === 0) {
+        gemeentelijkList.innerHTML = '';
+        noneMsg.style.display = 'block';
+        return;
+      }
+      noneMsg.style.display = 'none';
+
+      gemeentelijkList.innerHTML = matches.map(s => {
+        const voorwaarden = (s.voorwaarden || []).map(v => `<li>${v}</li>`).join('');
+        return `
+          <div class="subsidie-item">
+            <div class="sub-header">
+              <div>
+                <h3>${s.naam || s.gemeente}</h3>
+                <span class="sub-badge">${s.gemeente || s.regio || ''}</span>
+              </div>
+              <div class="sub-amount">€${(s.max_bedrag_eur || s.bedrag_eur || 0).toLocaleString('nl-NL')}</div>
+            </div>
+            ${s.doelgroep ? `<p class="sub-desc">${s.doelgroep}</p>` : ''}
+            ${voorwaarden ? `<details><summary>Voorwaarden</summary><ul>${voorwaarden}</ul></details>` : ''}
+            <div class="sub-footer">
+              ${s.aanvragen_url ? `<a href="${s.aanvragen_url}" target="_blank" rel="noopener" class="btn-sm">Aanvragen →</a>` : ''}
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    searchInput.addEventListener('input', () => renderGemeentelijk(searchInput.value));
+  </script>
+
+  <style>
+    .tool-page { padding: 2rem 0 4rem; }
+    .tool-header { margin-bottom: 2rem; }
+    .back-link { color: var(--color-text-light); font-size: 0.875rem; }
+    .tool-header h1 { margin: 0.5rem 0 0.5rem; font-size: 2rem; }
+    .tool-intro { color: var(--color-text-light); font-size: 1.05rem; margin: 0; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+
+    .subsidie-total {
+      display: flex; align-items: center; gap: 1.5rem;
+      background: #f0fdf4; border-color: #bbf7d0;
+    }
+    .total-icon { font-size: 3rem; }
+    .total-label { font-size: 0.85rem; font-weight: 600; color: #6b7280; display: block; }
+    .total-value { font-size: 2.5rem; font-weight: 800; color: #16a34a; display: block; }
+    .total-note { font-size: 0.8rem; color: #9ca3af; display: block; }
+
+    .section-desc { color: #6b7280; font-size: 0.9rem; margin: 0 0 1.25rem; }
+
+    .subsidie-item {
+      border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .sub-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; }
+    .sub-header h3 { margin: 0; font-size: 1rem; }
+    .sub-amount { font-size: 1.5rem; font-weight: 800; color: #16a34a; white-space: nowrap; }
+    .sub-status { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 8px; }
+    .sub-status.active { background: #dcfce7; color: #16a34a; }
+    .sub-badge { font-size: 0.72rem; background: #f3f4f6; color: #374151; padding: 2px 8px; border-radius: 8px; }
+    .sub-desc { font-size: 0.9rem; color: #374151; margin: 0.5rem 0; }
+
+    details { margin: 0.75rem 0; }
+    details summary { cursor: pointer; font-weight: 600; font-size: 0.85rem; color: #16a34a; }
+    details ul { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+    details li { font-size: 0.85rem; color: #374151; margin-bottom: 0.25rem; }
+
+    .sub-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem; }
+    .sub-geldig { font-size: 0.8rem; color: #9ca3af; }
+    .btn-sm {
+      display: inline-block; padding: 0.4rem 0.8rem; background: #16a34a; color: white;
+      border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none;
+    }
+
+    .search-box { margin-bottom: 1.25rem; }
+    .search-box input {
+      width: 100%; padding: 0.65rem 0.85rem; border: 2px solid #d1d5db; border-radius: 10px;
+      font-size: 1rem; transition: border-color 0.15s;
+    }
+    .search-box input:focus { border-color: #16a34a; outline: none; }
+
+    .disclaimer { font-size: 0.85rem; color: #6b7280; font-style: italic; }
+
+    .tip-card h3 { margin: 0 0 0.75rem; }
+    .tip-card ul { margin: 0; padding-left: 1.25rem; }
+    .tip-card li { font-size: 0.9rem; margin-bottom: 0.5rem; color: #374151; }
+
+    .result-cta { text-align: center; margin-top: 1rem; }
+    .btn-primary {
+      display: inline-block; padding: 0.75rem 1.5rem; background: #16a34a; color: white;
+      border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.5rem;
+    }
+    .btn-secondary {
+      display: inline-block; padding: 0.75rem 1.5rem; border: 2px solid #16a34a; color: #16a34a;
+      border-radius: 8px; font-weight: 700; text-decoration: none; margin: 0 0.5rem;
+    }
+  </style>
+</BaseLayout>
