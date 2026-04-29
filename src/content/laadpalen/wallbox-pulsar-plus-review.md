@@ -313,6 +313,14 @@ De twee echte zwakke punten zijn de korte garantietermijn (2 jaar) en het ontbre
 
 Na de SEEH-subsidie van €1.500 is de Wallbox Pulsar Plus voor de meeste huishoudens de **minst dure of zelfs gratis** thuislaadpaalinstallatie. Dat is een argument dat moeilijk te weerleggen is.
 
+## Dit raad ik af
+
+**Ik raad de Wallbox Pulsar Plus af als je WiFi in je garage onbetrouwbaar is.** Er is geen 4G-backup. Als de paal de verbinding verliest, kun je geen laadschema's meer sturen en geen monitoring doen. In de meeste moderne huizen is dit geen probleem, maar in een vrijstaande garage op 20 meter afstand: test je WiFi-signaal eerst.
+
+**Ik raad de 7 meter kabelversie af tenzij je hem echt nodig hebt.** Die kost €50–€100 meer en de extra kabellengte is in de praktijk zelden nodig — de meeste auto's laad je aan de chauffeurskant op maximaal 3–4 meter van de muur. Een lange kabel is onhandig opbergen en slijt sneller.
+
+**Mijn keuze:** Voor iemand die zijn eerste laadpaal koopt met een beperkt budget, raad ik de Wallbox Pulsar Plus aan. De combinatie van meegeleverde kabel én Power Boost standaard is uniek in dit prijssegment. Maar als het budget iets ruimer is, zou ik de extra €150 investeren in de Zaptec Go voor de ingebouwde DC-lekstroombeveiliging en drie jaar garantie.
+
 **Kies de Wallbox Pulsar Plus als:**
 - Prijs het belangrijkste criterium is
 - Je een meegeleverde kabel wil zonder extra aankoop

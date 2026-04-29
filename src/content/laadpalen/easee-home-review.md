@@ -286,6 +286,14 @@ De **Easee Home** verdient zijn reputatie als de beste all-round thuislaadpaal v
 
 Het nadeel van de losse kabel is reëel: reken op €150–€300 extra. En voor dynamisch load balancing of solar charging heb je ook nog de Equalizer nodig (€249). De totale investering loopt daarmee op naar €1.650–€1.800 — maar na SEEH-subsidie betaal je effectief €150–€300 netto.
 
+## Dit raad ik af
+
+**Ik raad de Easee Home af als je geen budget hebt voor de Equalizer.** Zonder Equalizer (€249) mis je de slimste functionaliteit: dynamisch load balancing en solar charging. Dan koop je de duurste paal van de vijf voor wat in wezen een basis laadpaal wordt. Neem dan liever de Zaptec Go — die heeft de DC-lekstroom al ingebouwd en de app is 90% zo goed.
+
+**Ik raad de Easee Home ook af als je een vaste kabel wil.** Ja, je kunt een kabel met kabeldoos kopen, maar dat is gelapt oplossing. Als vaste kabel voor jou een must is (kinderen, garage zonder plek voor losse kabel), neem dan de Wallbox Pulsar Plus.
+
+**Mijn keuze:** Easee Home — maar alleen met de Equalizer erbij. Zonder die module is het te duur voor wat je krijgt. Mét de Equalizer is dit de beste totaaloplossing op de markt. Ik zou het budget reserveren en wachten tot je het totaalpakket kunt betalen.
+
 **Kies de Easee Home als:**
 - Je een probleemloze, slimme laadpaal wil die met je meegroeit
 - Je zonnepanelen hebt of overweegt

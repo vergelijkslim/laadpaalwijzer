@@ -315,6 +315,14 @@ Het sterkste verkoopargument is het **totaalkostenverhaal**: de ingebouwde DC-le
 
 De app en het design zijn een tandje minder dan de Easee Home. Maar als je een betrouwbare, complete, installateurvriendelijke laadpaal wil voor de beste prijs-kwaliteitsverhouding op de markt, is de Zaptec Go de winnaar.
 
+## Dit raad ik af
+
+**Ik raad de Zaptec Go af als je domotica-integratie wil.** De Zaptec-app is functioneel, maar de Zaptec Go heeft geen native HomeKit, Google Home of Home Assistant-integratie zonder omwegen. De Wallbox Pulsar Plus doet dit beter. Als smart home-integratie je drempel is, ga dan voor de Wallbox.
+
+**Ik raad ook aan om de Zaptec Sense erbij te bestellen als je solar charging wil.** De dynamische load balancing van de Zaptec Go werkt alleen goed met de Zaptec Sense energiemeter (€199 extra). Zonder die meter laadt de paal op vast vermogen en mis je de slimste functie. In de marketingteksten wordt dit niet altijd even duidelijk benoemd.
+
+**Mijn keuze:** De Zaptec Go is mijn persoonlijke nummer 1 voor de meeste huishoudens. Het totaalkostenverhaal klopt: de ingebouwde DC-lekstroom bespaart €150–€200 op de installatiefactuur, en de aanschafprijs van €849 is lager dan de Easee Home. Als je een offerte aanvraagt, vraag dan direct of de installateur ook de Zaptec Sense meeneemt — dan heb je écht de beste setup voor het beste geld.
+
 **Kies de Zaptec Go als:**
 - Prijs-kwaliteit jouw hoofdcriterium is
 - Je installatiekosten wilt minimaliseren

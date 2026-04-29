@@ -87,7 +87,7 @@ De installatie is relatief eenvoudig dankzij het compacte formaat en de meegelev
 
 ### Nadelen
 - Geen vaste kabel — losse kabel moet apart worden aangeschaft
-- Premium prijsklasse
+- Duurste van de drie Scandinavische modellen (€899 vs. €849 Zaptec en €699 Wallbox)
 - App vereist account aanmaken en registratie
 
 ### Voor wie?
@@ -214,6 +214,16 @@ Met IP55-classificatie is de Smappee EV Wall de best beschermde laadpaal in deze
 De Smappee EV Wall is de beste keuze als je een compleet energiemanagementsysteem wilt waarin je laadpaal, zonnepanelen en eventueel een thuisbatterij naadloos samenwerken. Ideaal voor de techliefhebber die maximale controle over zijn energiehuishouding wil.
 
 → [Vraag een offerte aan voor de Smappee EV Wall](/offerte?product=smappee-ev-wall)
+
+---
+
+## Dit raad ik af
+
+**De Smappee EV Wall raad ik af als je alleen een laadpaal wilt.** Met €1.199 is het de duurste optie, maar je betaalt eigenlijk voor een compleet energiemanagementsysteem dat je misschien helemaal niet nodig hebt. De EV Wall functioneert alleen goed als je ook de Smappee Infinity-module koopt (nog eens €200–€400 extra). Zonder die module mis je de helft van de functionaliteit. Als je alleen een thuislaadpaal wilt, is dit €400–€700 te duur voor wat je krijgt.
+
+**De Alfen Eve Single raad ik af voor particulieren met een normaal thuisgebruik.** De MID-gecertificeerde meter, het OCPP-protocol en de industriële bouwkwaliteit zijn waardevolle features — voor bedrijven. Thuis heb je er weinig aan. Je betaalt €949 voor een paal die apps met beperkte functies heeft en minder intuïtief is dan de Easee of Zaptec. Die €100 extra boven de Zaptec koopt je hier geen betere thuislaadervaring.
+
+**Mijn keuze:** Als ik nu een laadpaal zou kopen, kies ik de **Zaptec Go**. Niet de Easee Home — die is ook uitstekend, maar €50 duurder voor een iets mooiere behuizing. De Zaptec heeft dezelfde slimme functies, ingebouwde DC-lekstroombeveiliging (bespaar €200 op installatie), en wordt door installateurs als betrouwbaarder beschouwd. Die combinatie wint voor mij.
 
 ---
 
