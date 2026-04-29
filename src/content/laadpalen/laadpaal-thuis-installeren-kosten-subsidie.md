@@ -254,7 +254,7 @@ Wil je precies weten wat een laadpaal bij jou thuis kost? Vraag een vrijblijvend
 
 Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:
 
-[Vraag gratis laadpaal-installatie offertes aan →](https://TRADETRACKER-LAADPAAL-OFFERTE-URL)
+[Vraag gratis laadpaal-installatie offertes aan →](/offerte/)
 
 **Handige producten (via Amazon.nl):**
 - [EV laadkabel Type 2 (5 meter)](https://www.amazon.nl/dp/B087QH171D?tag=vergelijk05-21)

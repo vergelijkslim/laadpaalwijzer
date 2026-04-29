@@ -63,7 +63,7 @@ Als je ook je auto wilt laden op zonnestroom, heb je meer panelen nodig dan alle
 | 20.000 km/jaar (veel rijden) | +8-10 panelen |
 | + warmtepomp in huis | +5-9 panelen extra |
 
-*Meer info over zonnepanelen: [SlimZonnig — Zonnepanelen Gids 2026](https://slimzonnig.nl/gids-zonnepanelen-nederland)*
+*Meer info over zonnepanelen: [SlimZonnig — Zonnepanelen Gids 2026](https://slimzonnig.nl)*
 
 ### 2. Een slimme laadpaal met zonmodus
 
@@ -157,7 +157,7 @@ Een goede slimme laadpaal heeft een vertraging ingebouwd zodat hij niet bij elke
 
 Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:
 
-[Vraag gratis laadpaal-installatie offertes aan →](https://TRADETRACKER-LAADPAAL-OFFERTE-URL)
+[Vraag gratis laadpaal-installatie offertes aan →](/offerte/)
 
 **Handige producten (via Amazon.nl):**
 - [EV laadkabel Type 2 (5 meter)](https://www.amazon.nl/dp/B087QH171D?tag=vergelijk05-21)

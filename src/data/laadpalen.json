@@ -31,7 +31,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP54",
-      "affiliate_url": "https://www.coolblue.nl/p/876543/easee-one.html?partner=vergelijk05-21",
+      "affiliate_url": "https://www.coolblue.nl/p/876543/easee-one.html",
       "badge": "beste-koop",
       "opmerkingen": "Meest populaire laadpaal in NL. Slimme lastbalancering. Goed voor woningen met zonnepanelen."
     },
@@ -55,7 +55,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP55",
-      "affiliate_url": "https://www.alfen.com/nl/eve-mini?ref=vergelijk05-21",
+      "affiliate_url": "https://www.alfen.com/nl-nl/ev-oplaadpunten/thuis/eve-single-s-line",
       "badge": "meest-betrouwbaar",
       "opmerkingen": "Nederlandse fabrikant. Premium kwaliteit. Veelgebruikt in zakelijke omgevingen."
     },
@@ -79,7 +79,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP66",
-      "affiliate_url": "https://www.go-e.com/products/charger-home?affiliate=vergelijk05-21",
+      "affiliate_url": "https://go-e.com/en/products/go-e-charger-core",
       "badge": "beste-prijs-kwaliteit",
       "opmerkingen": "Inclusief ingebouwde kabel. Uitstekende app met rijke functies. Goede optie voor starters."
     },
@@ -103,7 +103,7 @@
       "garantie_jaren": 2,
       "installatie_vereist": true,
       "ip_rating": "IP54",
-      "affiliate_url": "https://www.vestel-ev.com/nl/products/home-chargers?ref=vergelijk05-21",
+      "affiliate_url": null,
       "badge": null,
       "opmerkingen": "Budget-vriendelijke optie. Eenvoudige installatie. Subsidie-geschikt."
     },
@@ -127,7 +127,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP54",
-      "affiliate_url": "https://www.chargestorm.se/nl/products/connected-2?aff=vergelijk05-21",
+      "affiliate_url": null,
       "badge": null,
       "opmerkingen": "Scandinavisch design. RFID-kaart meegeleverd. Goed ondersteund in NL."
     },
@@ -151,7 +151,7 @@
       "garantie_jaren": 2,
       "installatie_vereist": true,
       "ip_rating": "IP54",
-      "affiliate_url": "https://wallbox.com/nl_nl/pulsar-plus?utm_source=vergelijk05-21",
+      "affiliate_url": "https://www.wallbox.com/nl_nl/pulsar-max-laadpaal-socket",
       "badge": "compactste-design",
       "opmerkingen": "Compact formaat. Mooie app. Goed voor energiebeheer in combinatie met zonnepanelen."
     },
@@ -175,7 +175,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP55",
-      "affiliate_url": "https://new.abb.com/ev-charging/nl/terra-ac?ref=vergelijk05-21",
+      "affiliate_url": null,
       "badge": null,
       "opmerkingen": "Industriële kwaliteit voor thuisgebruik. Robuust en betrouwbaar. Ideaal voor zakelijk gebruik thuis."
     },
@@ -199,7 +199,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP54",
-      "affiliate_url": "https://www.mennekes.de/nl/e-mobility/amtron?partner=vergelijk05-21",
+      "affiliate_url": "https://www.mennekes.nl/emobility",
       "badge": null,
       "opmerkingen": "Duits kwaliteitsproduct. Uitgebreide OCPP ondersteuning. Populair bij installateurs."
     },
@@ -223,7 +223,7 @@
       "garantie_jaren": 12,
       "installatie_vereist": true,
       "ip_rating": "IP65",
-      "affiliate_url": "https://www.solaredge.com/nl/products/electric-vehicle-ev-charging?ref=vergelijk05-21",
+      "affiliate_url": "https://www.solaredge.com/nl/products/electric-vehicle-ev-charging",
       "badge": "beste-zonnepaneel-integratie",
       "opmerkingen": "Speciaal ontworpen voor gebruik met SolarEdge omvormers. Maximale benutting zonne-energie. Ideaal bij zonnepanelen."
     },
@@ -247,7 +247,7 @@
       "garantie_jaren": 3,
       "installatie_vereist": true,
       "ip_rating": "IP44",
-      "affiliate_url": "https://www.heidelberg-wallbox.eu/nl/home-eco?ref=vergelijk05-21",
+      "affiliate_url": null,
       "badge": "eenvoudigste-installatie",
       "opmerkingen": "Geen app, gewoon altijd aan. Plug-and-play. Goede keuze als je geen smart functies nodig hebt. Betrouwbaar Duits product."
     }

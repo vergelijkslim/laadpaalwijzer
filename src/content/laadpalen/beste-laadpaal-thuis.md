@@ -123,7 +123,7 @@ De Zaptec Go staat hoog aangeschreven bij installateurs vanwege het slimme monta
 ### Voor wie?
 De Zaptec Go is de ideale keuze voor wie een betrouwbare, complete laadpaal zoekt zonder te veel te betalen. Uitstekende keuze als prijs-kwaliteit je belangrijkste criterium is.
 
-→ [Vraag een offerte aan voor de Zaptec Go](/offerte?product=zaptec-go)
+→ [Vraag een offerte aan voor de Zaptec Go](/offerte?product=zaptec-go) | [Lees onze uitgebreide Zaptec Go review](/laadpalen/zaptec-go-review)
 
 ---
 
@@ -153,7 +153,7 @@ Vanaf €699 is dit de meest betaalbare optie met een complete functieset. De my
 ### Voor wie?
 De Wallbox Pulsar Plus is de beste keuze voor de budgetbewuste koper die een betrouwbare, compacte laadpaal wil met vaste kabel. Ideaal als eerste thuislaadpaal.
 
-→ [Vraag een offerte aan voor de Wallbox Pulsar Plus](/offerte?product=wallbox-pulsar-plus)
+→ [Vraag een offerte aan voor de Wallbox Pulsar Plus](/offerte?product=wallbox-pulsar-plus) | [Lees onze uitgebreide Wallbox Pulsar Plus review](/laadpalen/wallbox-pulsar-plus-review)
 
 ---
 
@@ -278,7 +278,7 @@ Ongeacht welke laadpaal je kiest: een thuislader is altijd een slimme investerin
 
 Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:
 
-[Vraag gratis laadpaal-installatie offertes aan →](https://TRADETRACKER-LAADPAAL-OFFERTE-URL)
+[Vraag gratis laadpaal-installatie offertes aan →](/offerte/)
 
 **Handige producten (via Amazon.nl):**
 - [EV laadkabel Type 2 (5 meter)](https://www.amazon.nl/dp/B087QH171D?tag=vergelijk05-21)

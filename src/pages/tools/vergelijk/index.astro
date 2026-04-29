@@ -150,7 +150,7 @@ const badgeLabels: Record<string, string> = {
           <td>${l.vermogen_kw} kW</td>
           <td>${l.smart ? '<span class="yes">✓</span>' : '<span class="no">✗</span>'}</td>
           <td><div class="feature-tags">${features.map(f => `<span class="tag">${f}</span>`).join('')}</div></td>
-          <td><a href="${l.affiliate_url}" target="_blank" rel="noopener" class="btn-sm">Bekijk →</a></td>
+          <td>${l.affiliate_url ? `<a href="${l.affiliate_url}" target="_blank" rel="noopener" class="btn-sm">Bekijk →</a>` : '<span class="no-link">—</span>'}</td>
         </tr>`;
       }).join('');
     }

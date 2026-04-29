@@ -43,7 +43,7 @@ De **Subsidie Elektrische Rijders Huurders (SEEH)** is er specifiek voor huurder
 - Parkeerplaatsen in collectieve garages
 
 **Wat vergoedt het?**
-De SEEH vergoedt installatiekosten voor het oplaadinfrascructuur in huurwoningen — denk aan kabelgoten, groepenkast uitbreiding, en de aansluiting zelf.
+De SEEH vergoedt installatiekosten voor het oplaadinfrastructuur in huurwoningen — denk aan kabelgoten, groepenkast uitbreiding, en de aansluiting zelf.
 
 **Hoe aanvragen?**
 Via RVO.nl (Rijksdienst voor Ondernemend Nederland). Zorg dat je installatieofferte klaarligt.
@@ -146,7 +146,7 @@ Bij de meeste regelingen: vóór of tijdens de installatie. Achteraf aanvragen i
 
 Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:
 
-[Vraag gratis laadpaal-installatie offertes aan →](https://TRADETRACKER-LAADPAAL-OFFERTE-URL)
+[Vraag gratis laadpaal-installatie offertes aan →](/offerte/)
 
 **Handige producten (via Amazon.nl):**
 - [EV laadkabel Type 2 (5 meter)](https://www.amazon.nl/dp/B087QH171D?tag=vergelijk05-21)
