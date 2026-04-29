@@ -119,6 +119,14 @@ Een eenvoudige laadpaal als de **Besen Tethered** of een losse laadkabel + stopc
 
 **Let wel op:** als je ooit overweegt om zonnepanelen te nemen, is het goedkoper om nu een slimme laadpaal te installeren dan later de gewone te vervangen.
 
+## Dit raad ik af
+
+**Ik raad een gewone laadpaal af als je ook maar overweegt om later zonnepanelen te nemen.** Een gewone laadpaal die je nu installeert, moet je later vervangen als je solar charging wilt — en die nieuwe installatie kost je opnieuw €500–€800 aan arbeidskosten. Dat is duurder dan nu direct een slimme paal te nemen. De €100–€200 die je nu bespaart, verlies je dubbel bij de vervanging.
+
+**Ik raad de Besen en andere goedkope no-name palen af.** Ze doen het werk, maar na twee jaar klachten op forums over app-problemen, klantenservice die niet reageert, en firmware-updates die niet meer komen, zie je waarom "goedkoop" hier te duur is. Een Zaptec Go of Wallbox Pulsar Plus kost je €150–€200 meer, maar je hebt over vijf jaar nog steeds een paal die werkt.
+
+**Mijn keuze:** Slimme laadpaal, altijd. Het prijsverschil is zo klein (€100–€200 extra) dat de gewone paal alleen zinvol is als je absoluut zeker weet dat je nooit zonnepanelen neemt én geen dynamisch tarief overweegt. In de praktijk kennen we bijna niemand die dat met zekerheid kan zeggen. Ik zou de Zaptec Go nemen: beste prijs-kwaliteit, ingebouwde DC-lekstroom, en installateurs werken er graag mee.
+
 ## Ons advies: toekomstbestendig kiezen
 
 De energiemarkt verandert snel. Dynamische tarieven worden de norm, de salderingsregeling loopt af (waardoor eigen stroomgebruik belangrijker wordt), en meer huishoudens krijgen zonnepanelen.
