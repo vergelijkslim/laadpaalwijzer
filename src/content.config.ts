@@ -14,6 +14,7 @@ const articleSchema = z.object({
   og_title: z.string().optional(),
   og_description: z.string().optional(),
   cluster: z.string().optional(),
+  affiliateLinks: z.array(z.string()).default([]),
 });
 
 const laadpalen = defineCollection({

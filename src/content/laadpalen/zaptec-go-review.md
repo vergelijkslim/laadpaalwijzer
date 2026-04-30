@@ -14,6 +14,7 @@ keywords:
   - zaptec go installatie
   - zaptec go app
   - zaptec go 2 ervaringen
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "amazon-rfid-laadpas"]
 type: comparison
 cluster: productreviews
 publish_date: 2026-04-29

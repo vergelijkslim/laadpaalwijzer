@@ -11,6 +11,7 @@ keywords:
   - laadpaal kopen tips
   - thuislaadpaal kiezen
   - laadpaal koopadvies
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "amazon-type2-laadkabel"]
 type: guide
 cluster: koopadvies
 publish_date: 2026-04-20

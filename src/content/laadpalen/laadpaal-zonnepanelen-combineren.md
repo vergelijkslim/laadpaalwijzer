@@ -12,6 +12,7 @@ keywords:
   - slimme laadpaal zonnepanelen
   - solar charging laadpaal
   - laadpaal zonne-energie
+affiliateLinks: ["laadpaal-offerte", "amazon-energie-monitor", "wallbox-installateur"]
 type: informational
 cluster: combinaties
 publish_date: 2026-04-22

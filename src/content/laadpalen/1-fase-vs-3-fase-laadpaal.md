@@ -12,6 +12,7 @@ keywords:
   - driefase laadpaal
   - laadvermogen thuis
   - laadpaal aansluiting
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "amazon-type2-laadkabel"]
 type: guide
 cluster: technisch
 publish_date: 2026-04-23

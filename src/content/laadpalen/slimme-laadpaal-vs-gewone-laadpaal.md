@@ -10,6 +10,7 @@ keywords:
   - dynamisch laden
   - laadpaal met app
   - slimme thuislader
+affiliateLinks: ["laadpaal-offerte", "amazon-rfid-laadpas", "wallbox-installateur"]
 type: comparison
 cluster: vergelijken
 publish_date: 2026-04-22

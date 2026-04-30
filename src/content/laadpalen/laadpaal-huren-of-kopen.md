@@ -12,6 +12,7 @@ keywords:
   - laadpaal lease
   - thuislaadpaal huren
   - laadpaal all-in
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur"]
 type: comparison
 cluster: kosten
 publish_date: 2026-04-30

@@ -11,6 +11,7 @@ keywords:
   - thuislaadpaal top 5
   - laadpaal kopen
   - laadpaal thuis installeren
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "amazon-type2-laadkabel"]
 type: pillar
 cluster: hoofdkeywords
 publish_date: 2026-04-20

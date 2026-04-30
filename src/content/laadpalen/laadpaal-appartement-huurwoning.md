@@ -13,6 +13,7 @@ keywords:
   - laadpaal parkeerplaats appartement
   - VvE toestemming laadpaal
   - laadpaal appartement subsidie
+affiliateLinks: ["laadpaal-offerte", "subsidie-isde", "amazon-rfid-laadpas"]
 type: guide
 cluster: specifieke-situaties
 publish_date: 2026-04-30

@@ -10,6 +10,7 @@ keywords:
   - SEEH laadpaal
   - laadpaal vergoeding
   - laadpaal belastingvoordeel
+affiliateLinks: ["laadpaal-offerte", "subsidie-isde", "wallbox-installateur"]
 type: informational
 cluster: subsidies
 publish_date: 2026-04-22

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 import '../../lib/affiliate-data';
 import { getLink, buildTrackingUrl } from '../../lib/affiliates';
+import AffiliateButton from '../../components/AffiliateButton.astro';
 
 export async function getStaticPaths() {
   const articles = await getCollection('laadpalen', ({ data }) => !data.draft && data.type !== 'seo-reference');
@@ -14,7 +15,8 @@ export async function getStaticPaths() {
 
 const { article, allArticles } = Astro.props;
 const { Content } = await render(article);
-const { title, description, publish_date, last_updated, author, type, og_title, og_description } = article.data;
+const { title, description, publish_date, last_updated, author, type, og_title, og_description, affiliateLinks } = article.data;
+const extraAffiliateLinks = (affiliateLinks || []).filter(id => id !== 'laadpaal-offerte' && !!getLink(id));
 
 const readTime = Math.max(1, Math.ceil(article.body!.split(/\s+/).length / 250));
 
@@ -94,6 +96,9 @@ const articleSchema = {
               rel="nofollow noopener sponsored"
               data-affiliate-id="laadpaal-offerte"
             >Gratis offerte aanvragen</a>
+            {extraAffiliateLinks.map(id => (
+              <AffiliateButton linkId={id} variant="cta" />
+            ))}
           </div>
           <p class="cta-disclaimer">
             <small>* Deze pagina kan affiliate links bevatten. <a href="/disclaimer/">Lees onze disclaimer</a>.</small>

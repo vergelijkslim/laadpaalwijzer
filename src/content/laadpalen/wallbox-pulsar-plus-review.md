@@ -13,6 +13,7 @@ keywords:
   - wallbox pulsar plus installatie
   - wallbox pulsar plus app
   - wallbox pulsar plus test
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "amazon-type2-laadkabel"]
 type: comparison
 cluster: productreviews
 publish_date: 2026-04-29

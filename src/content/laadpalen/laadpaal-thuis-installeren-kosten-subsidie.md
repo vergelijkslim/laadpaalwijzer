@@ -11,6 +11,7 @@ keywords:
   - laadpaal subsidie
   - thuislader kosten
   - laadpaal installeren prijs
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "subsidie-isde"]
 type: guide
 cluster: kosten-subsidie
 publish_date: 2026-04-20

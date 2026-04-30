@@ -13,6 +13,7 @@ keywords:
   - easee home installatie
   - easee home app
   - easee home solar charging
+affiliateLinks: ["laadpaal-offerte", "wallbox-installateur", "amazon-type2-laadkabel"]
 type: comparison
 cluster: productreviews
 publish_date: 2026-04-23
