@@ -14,7 +14,7 @@ keywords:
 type: guide
 cluster: koopadvies
 publish_date: 2026-04-20
-last_updated: 2026-04-20
+last_updated: 2026-04-30
 author: LaadpaalWijzer Redactie
 ---
 
@@ -316,6 +316,16 @@ Technisch is dat mogelijk, maar wij raden het af. Je mist garantie, de installat
 ---
 
 *Vergelijk-uw-laadpaal.nl is onafhankelijk. We kunnen een vergoeding ontvangen als je via onze links een offerte aanvraagt of product aanschaft. Dit beïnvloedt onze beoordelingen niet. Prijzen zijn indicatief (april 2026).*
+
+---
+
+## Specifieke situaties
+
+Sommige situaties vragen om extra aandacht bij de keuze van een laadpaal:
+
+- **Appartement of huurwoning?** Je hebt VvE- of verhuurdertoestemming nodig. Lees onze complete gids: [Laadpaal appartement & huurwoning](/laadpalen/laadpaal-appartement-huurwoning)
+- **Twijfel tussen huren en kopen?** Kopen is bijna altijd goedkoper na 3 jaar. Zie de volledige kostenvergelijking: [Laadpaal huren of kopen?](/laadpalen/laadpaal-huren-of-kopen)
+- **Zonnepanelen aanwezig?** Solar charging is dan een must-have. Lees: [Laadpaal combineren met zonnepanelen](/laadpalen/laadpaal-zonnepanelen-combineren)
 
 ---
 
