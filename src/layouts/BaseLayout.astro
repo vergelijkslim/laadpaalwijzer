@@ -57,7 +57,18 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Google Analytics 4 — placeholder removed; add real Measurement ID when available -->
+  {import.meta.env.PUBLIC_GA4_ID && (
+    <>
+      <meta name="ga-measurement-id" content={import.meta.env.PUBLIC_GA4_ID} />
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA4_ID}`}></script>
+      <script define:vars={{ ga4Id: import.meta.env.PUBLIC_GA4_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', ga4Id, { anonymize_ip: true });
+      </script>
+    </>
+  )}
 
   <!-- TradeTracker site verificatie -->
   <meta name="tt-site-verification" content="8f01275dde678d20a05f621c189d99a9faf36f6d" />

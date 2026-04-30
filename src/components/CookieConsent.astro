@@ -120,7 +120,8 @@
     document.getElementById('cookie-decline').addEventListener('click', function() {
       localStorage.setItem('cookie-consent', 'declined');
       banner.classList.remove('visible');
-      window['ga-disable-G-XXXXXXXXXX'] = true;
+      var gaMeta = document.querySelector('meta[name="ga-measurement-id"]');
+      if (gaMeta) { window['ga-disable-' + gaMeta.getAttribute('content')] = true; }
     });
   })();
 </script>
