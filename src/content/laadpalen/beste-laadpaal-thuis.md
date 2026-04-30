@@ -273,6 +273,7 @@ De gemiddelde levensduur van een thuislaadpaal is 10–15 jaar. De meeste fabrik
 | Je wilt maximale betrouwbaarheid | **Alfen Eve Single** — bewezen Nederlandse technologie |
 | Je wilt compleet energiemanagement | **Smappee EV Wall** — laadpaal + energiesysteem in één |
 | Je woont in een appartement of huurwoning | **Zaptec Go** — ideaal voor VvE en gedeelde garage; [lees onze gids](/laadpalen/laadpaal-appartement-huurwoning) |
+| Je twijfelt tussen huren en kopen | **Kopen loont** na 3 jaar — [lees de volledige vergelijking](/laadpalen/laadpaal-huren-of-kopen) |
 
 Ongeacht welke laadpaal je kiest: een thuislader is altijd een slimme investering. Je bespaart honderden euro's per jaar ten opzichte van publiek laden, en in combinatie met [zonnepanelen](https://slimzonnig.nl) rijd je vrijwel gratis.
 
