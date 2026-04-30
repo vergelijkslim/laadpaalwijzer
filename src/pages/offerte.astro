@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import '../lib/affiliate-data';
+import { getLink, buildTrackingUrl } from '../lib/affiliates';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -31,7 +33,7 @@ const providers = [
     name: 'Eneco Laadpaal',
     description: 'Complete laadoplossing inclusief installatie. Geschikt voor alle populaire EV-merken.',
     features: ['Inclusief installatie', 'ISDE-subsidie begeleiding', 'App-sturing', '3 jaar garantie'],
-    url: 'https://www.eneco.nl/energieproducten/elektrisch-rijden/',
+    affiliateId: 'eneco-laadpaal',
     cta: 'Offerte aanvragen',
     featured: true,
   },
@@ -39,7 +41,7 @@ const providers = [
     name: 'Vattenfall Laadpaal',
     description: 'Smart charging met integratie voor zonnepanelen. Populair bij PHEV en full EV rijders.',
     features: ['Slim laden met zonnepanelen', 'Dalurenladen automatisch', 'RFID-kaart', '2 jaar garantie'],
-    url: 'https://www.vattenfall.nl/laadpaal/laadpaal-thuis/',
+    affiliateId: 'vattenfall-laadpaal',
     cta: 'Offerte aanvragen',
     featured: false,
   },
@@ -47,11 +49,14 @@ const providers = [
     name: 'Wallbox via installateur',
     description: 'Professionele installatie van Wallbox Pulsar Plus of Commander 2 door erkend installateur.',
     features: ['Beste prijs-kwaliteit', 'Meerdere merken', 'ISDE-geschikt', 'Installatiecertificaat'],
-    url: 'https://www.wallbox.com/nl_NL/',
+    affiliateId: 'wallbox-installateur',
     cta: 'Vergelijk via installateur',
     featured: false,
   },
-];
+].map((p) => ({
+  ...p,
+  url: buildTrackingUrl(getLink(p.affiliateId)!),
+}));
 ---
 
 <BaseLayout
@@ -106,7 +111,7 @@ const providers = [
                 </li>
               ))}
             </ul>
-            <a href={provider.url} class={provider.featured ? 'btn btn-cta' : 'btn btn-primary'} target="_blank" rel="noopener noreferrer sponsored">
+            <a href={provider.url} class={provider.featured ? 'btn btn-cta' : 'btn btn-primary'} target="_blank" rel="nofollow noopener sponsored" data-affiliate-id={provider.affiliateId}>
               {provider.cta} →
             </a>
           </div>

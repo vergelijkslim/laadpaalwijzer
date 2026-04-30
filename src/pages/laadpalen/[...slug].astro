@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import '../../lib/affiliate-data';
+import { getLink, buildTrackingUrl } from '../../lib/affiliates';
 
 export async function getStaticPaths() {
   const articles = await getCollection('laadpalen', ({ data }) => !data.draft && data.type !== 'seo-reference');
@@ -85,6 +87,13 @@ const articleSchema = {
           <p>Vergelijk de beste thuislaadpalen van Nederland en vraag een vrijblijvende offerte aan.</p>
           <div class="cta-buttons">
             <a href="/offerte/" class="btn btn-primary">Vergelijk laadpalen</a>
+            <a
+              href={buildTrackingUrl(getLink('laadpaal-offerte')!)}
+              class="btn btn-cta"
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              data-affiliate-id="laadpaal-offerte"
+            >Gratis offerte aanvragen</a>
           </div>
           <p class="cta-disclaimer">
             <small>* Deze pagina kan affiliate links bevatten. <a href="/disclaimer/">Lees onze disclaimer</a>.</small>
