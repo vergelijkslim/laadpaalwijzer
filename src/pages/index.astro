@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'LaadpaalWijzer.nl',
+  name: 'Vergelijk Uw Laadpaal',
   url: Astro.site?.href,
   description: 'De onafhankelijke gids voor laadpalen thuis in Nederland',
   inLanguage: 'nl',
@@ -29,7 +29,7 @@ const typeLabels: Record<string, string> = {
 ---
 
 <BaseLayout
-  title="LaadpaalWijzer.nl — Onafhankelijk vergelijken"
+  title="Vergelijk Uw Laadpaal — Onafhankelijk vergelijken"
   description="Vergelijk thuislaadpalen op vermogen, slimme functies en prijs. Inclusief subsidie-info en installatiekosten. Onafhankelijk advies voor Nederlandse elektrische rijders."
   structuredData={structuredData}
 >
