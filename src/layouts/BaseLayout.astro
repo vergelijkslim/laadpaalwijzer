@@ -57,6 +57,7 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+  <!-- GA4: activated when PUBLIC_GA4_ID env var is set (e.g. G-XXXXXXXXXX) -->
   {import.meta.env.PUBLIC_GA4_ID && (
     <>
       <meta name="ga-measurement-id" content={import.meta.env.PUBLIC_GA4_ID} />
@@ -66,6 +67,18 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', ga4Id, { anonymize_ip: true });
+        document.addEventListener('DOMContentLoaded', function () {
+          document.querySelectorAll('a[data-affiliate-id], a[rel~="sponsored"]').forEach(function (el) {
+            el.addEventListener('click', function () {
+              gtag('event', 'affiliate_click', { affiliate_id: el.getAttribute('data-affiliate-id') || 'unknown', affiliate_network: el.getAttribute('data-affiliate-network') || 'unknown', page_path: window.location.pathname, link_url: el.href });
+            });
+          });
+          document.querySelectorAll('a[target="_blank"]').forEach(function (el) {
+            if (!el.hasAttribute('data-affiliate-id')) {
+              el.addEventListener('click', function () { gtag('event', 'outbound_click', { link_url: el.href, page_path: window.location.pathname }); });
+            }
+          });
+        });
       </script>
     </>
   )}
