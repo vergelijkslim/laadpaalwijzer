@@ -2,28 +2,45 @@
 title: "Laadpaal met Zonnepanelen: Zo Combineer Je het Slim (2026)"
 slug: "laadpaal-zonnepanelen-combineren"
 description: "Laadpaal en zonnepanelen combineren: zo rij je op eigen zonnestroom. Wat heb je nodig, wat kost het en hoeveel kun je besparen? Volledig uitgelegd."
+og_title: "Laadpaal + Zonnepanelen 2026 — Rijd op Eigen Stroom"
+og_description: "Hoe combineer je een slimme laadpaal met zonnepanelen? Alles over solar charging, benodigde panelen, kosten en de beste laadpalen voor zon-integratie."
 keywords:
   - laadpaal zonnepanelen
   - laadpaal zonnepanelen combineren
   - elektrische auto zonnepanelen
   - laden op zonnestroom
   - slimme laadpaal zonnepanelen
+  - solar charging laadpaal
+  - laadpaal zonne-energie
 type: informational
 cluster: combinaties
 publish_date: 2026-04-22
-last_updated: 2026-04-22
+last_updated: 2026-04-30
 author: LaadpaalWijzer Redactie
 ---
 
 # Laadpaal met Zonnepanelen Combineren: Rijd op Eigen Stroom
 
-*Dit artikel kan affiliate links bevatten. Via onze links kun je offertes aanvragen of producten kopen. Wij ontvangen dan mogelijk een vergoeding — zonder extra kosten voor jou.*
+*Dit artikel bevat affiliate links. Als je via onze links een offerte aanvraagt of product aanschaft, ontvangen wij mogelijk een vergoeding — zonder extra kosten voor jou.*
+
+---
+
+## Inhoudsopgave
+
+1. [Waarom is deze combinatie zo aantrekkelijk?](#waarom)
+2. [Hoe werkt laden op zonnestroom?](#hoe-werkt-het)
+3. [Wat heb je nodig?](#wat-heb-je-nodig)
+4. [De optimale installatie: stap voor stap](#installatie)
+5. [Wat kost de volledige setup?](#kosten)
+6. [Thuisbatterij toevoegen](#thuisbatterij)
+7. [Beste laadpalen voor zon-integratie](#beste-laadpalen)
+8. [Veelgestelde vragen](#faq)
 
 ---
 
 Stel je voor: je rijdt je elektrische auto op stroom die je zelf hebt opgewekt. Geen benzinerekening, geen hoge laadkosten — gewoon gratis zonnestroom uit je eigen dak. Dat is de droom, en in 2026 is het voor veel huishoudens realiteit. Hier lees je hoe je dat precies aanpakt.
 
-## Waarom is deze combinatie zo aantrekkelijk?
+## Waarom is deze combinatie zo aantrekkelijk? {#waarom}
 
 Simpele wiskunde: een elektrische auto rijdt gemiddeld 15.000 km per jaar en verbruikt ~18 kWh/100 km. Dat is **2.700 kWh aan laadstroom per jaar**.
 
@@ -33,7 +50,7 @@ Met voldoende zonnepanelen en een slimme laadpaal die laadt op zonnestroom­over
 
 **Besparing: €500-600 per jaar.** Op 10 jaar: €5.000-6.000.
 
-## Hoe werkt laden op zonnestroom?
+## Hoe werkt laden op zonnestroom? {#hoe-werkt-het}
 
 Een slimme laadpaal kan je energiemeter of omvormer uitlezen en ziet continu:
 - Hoeveel stroom je zonnepanelen opwekken
@@ -50,7 +67,7 @@ Een EV heeft minimaal 1.400W nodig om te laden (1-fase, minimum amperage). Dit b
 
 **Praktisch:** op een zonnige dag met 10+ panelen en weinig huishoudelijk verbruik is dit prima haalbaar. Op bewolkte dagen of 's avonds laad je gewoon op netspanning.
 
-## Wat heb je nodig?
+## Wat heb je nodig? {#wat-heb-je-nodig}
 
 ### 1. Voldoende zonnepanelen
 
@@ -82,7 +99,7 @@ Niet alle slimme laadpalen ondersteunen "solar charging" even goed. Let op deze 
 
 Met een slimme meter (P1-poort) of energiemonitor (bijv. Homewizard, Shelly EM) krijgt je laadpaal real-time inzicht in je energiebalans. Meeste moderne Alfen/Easee-installaties regelen dit automatisch.
 
-## De optimale installatie: stap voor stap
+## De optimale installatie: stap voor stap {#installatie}
 
 **Stap 1: Installeer voldoende zonnepanelen**
 Bereken je ideale aantal panelen op basis van je huisverbruik + auto. Neem 10-20% extra capaciteit voor toekomstige uitbreiding.
@@ -99,17 +116,17 @@ Via de app stel je in:
 **Stap 4: Koppel met dynamisch energiecontract (optioneel)**
 Met een dynamisch contract (bijv. Tibber, ANWB Energie) laadt je auto ook 's nachts op de goedkoopste uren. Combineer dit met de solar-modus voor maximale besparing.
 
-## Wat kost de volledige setup?
+## Wat kost de volledige setup? {#kosten}
 
 | Component | Kosten |
 |---|---|
 | Zonnepanelen (12 panelen, 420 Wp) | €6.200 (installatie incl.) |
 | Extra panelen voor auto (7 stuks) | +€2.800 |
-| Slimme laadpaal (Alfen Eve Mini) | €899 |
+| Slimme laadpaal (Zaptec Go) | €729 |
 | Installatie laadpaal | €650 |
-| **Totaal** | **~€10.550** |
-| Gemeentelijke subsidie laadpaal | -€300 |
-| **Netto investering** | **~€10.250** |
+| **Totaal** | **~€10.379** |
+| SEEH-subsidie laadpaal | -€300 |
+| **Netto investering** | **~€10.079** |
 
 **Jaarlijkse besparing:**
 - Zonnepanelen (huis): €1.050/jaar
@@ -120,7 +137,7 @@ Met een dynamisch contract (bijv. Tibber, ANWB Energie) laadt je auto ook 's nac
 
 (Na 2027 daalt de salderingsvergoeding, maar dan is laden op eigen stroom juist interessanter.)
 
-## Thuisbatterij toevoegen: de derde dimensie
+## Thuisbatterij toevoegen: de derde dimensie {#thuisbatterij}
 
 Met een thuisbatterij breid je dit systeem verder uit:
 - Overdag: zonnepanelen laden eerst de auto, daarna de thuisbatterij
@@ -130,7 +147,24 @@ Dit maximaliseert het gebruik van eigen zonnestroom. **In 2026 zijn thuisbatteri
 
 *Meer lezen over thuisbatterijen: [vergelijk-uw-thuisbatterij.nl](https://vergelijk-uw-thuisbatterij.nl)*
 
-## Veelgestelde vragen
+## Beste laadpalen voor zon-integratie {#beste-laadpalen}
+
+| Laadpaal | Solar modus | Koppeling | Prijs | Review |
+|----------|-------------|-----------|-------|--------|
+| **Easee Home** | ✅ Uitstekend | P1-meter + Modbus | ~€799 | [Lees review](/laadpalen/easee-home-review) |
+| **Zaptec Go** | ✅ Uitstekend | P1-meter + Zaptec Sense | ~€729 | [Lees review](/laadpalen/zaptec-go-review) |
+| **Wallbox Pulsar Plus** | ✅ Eco-Smart | P1-meter | ~€649 | [Lees review](/laadpalen/wallbox-pulsar-plus-review) |
+| **Alfen Eve S-Line** | ✅ Goed | P1-meter + Modbus | ~€949 | — |
+| **Smappee EV Wall** | ✅ Natief geïntegreerd | Smappee Infinity | ~€1.199 | — |
+
+**Onze aanbeveling voor solar charging:**
+- **Budget:** Wallbox Pulsar Plus — Eco-Smart modus inbegrepen, laagste aanschafprijs
+- **Prijs-kwaliteit:** Zaptec Go + Zaptec Sense — nauwkeurige real-time solar koppeling
+- **Beste overall:** Easee Home + Easee Equalizer — meest gepolijste app-ervaring voor solar
+
+---
+
+## Veelgestelde vragen {#faq}
 
 **Kan ik laden op zonnepanelen met een gewone laadpaal?**
 Technisch ja — als je overdag laadt en je panelen genoeg opwekken. Maar je mist de automatische regeling: een slimme laadpaal doet dit automatisch en efficiënter.
@@ -157,7 +191,7 @@ Een goede slimme laadpaal heeft een vertraging ingebouwd zodat hij niet bij elke
 
 **Mijn keuze:** Easee Home + Easee Equalizer voor de beste solar charging-integratie. Of Zaptec Go + Zaptec Sense als je de goedkopere totaaloplossing wil. Beide combinaties reageren nauwkeurig op je zonne-overschot en zijn eenvoudig in te stellen via de app.
 
-*Klaar om te starten? Bekijk de [beste slimme laadpalen van 2026](/beste-laadpaal-thuis) of lees over [subsidies voor je laadpaal](/laadpaal-subsidie-2026).*
+*Klaar om te starten? Bekijk de [beste slimme laadpalen van 2026](/laadpalen/beste-laadpaal-thuis) of lees over [subsidies voor je laadpaal](/laadpalen/laadpaal-subsidie-2026).*
 
 ---
 
