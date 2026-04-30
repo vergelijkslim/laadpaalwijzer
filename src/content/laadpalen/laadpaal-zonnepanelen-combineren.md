@@ -149,6 +149,14 @@ Een goede slimme laadpaal heeft een vertraging ingebouwd zodat hij niet bij elke
 
 ---
 
+## Dit raad ik af
+
+**Ik raad af om zonnepanelen uitsluitend voor je laadpaal te nemen.** Zonnepanelen op de auto-investering afschrijven duurt te lang — de businesscase voor zonnepanelen staat los van de laadpaal. Koop zonnepanelen vanwege de energiebesparing op je huishouden; de auto is een bonus.
+
+**Een laadpaal zonder P1-meter-koppeling raad ik af als je zonnepanelen hebt.** Zonder die koppeling laad je op vast vermogen en profiteer je niet van het overschot. Zorg dat je laadpaal óf een P1-lezer heeft óf direct koppelt met je omvormer via Modbus.
+
+**Mijn keuze:** Easee Home + Easee Equalizer voor de beste solar charging-integratie. Of Zaptec Go + Zaptec Sense als je de goedkopere totaaloplossing wil. Beide combinaties reageren nauwkeurig op je zonne-overschot en zijn eenvoudig in te stellen via de app.
+
 *Klaar om te starten? Bekijk de [beste slimme laadpalen van 2026](/beste-laadpaal-thuis) of lees over [subsidies voor je laadpaal](/laadpaal-subsidie-2026).*
 
 ---

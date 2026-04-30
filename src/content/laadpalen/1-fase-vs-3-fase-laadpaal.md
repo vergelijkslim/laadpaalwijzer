@@ -168,6 +168,14 @@ Een 11 kW 3-fase laadpaal is de meest toekomstbestendige keuze als je woning al 
 
 ---
 
+## Dit raad ik af
+
+**Een 3-fase netaansluiting aanvragen puur voor een laadpaal raad ik af.** De kosten voor een 3-fase aansluiting lopen op tot €1.500–€3.000. De tijdsbesparing bij laden is voor de meeste gebruikers marginaal — je laadt toch 's nachts en je auto staat urenlang stil. Die investering verdien je met lagere laadkosten nooit terug.
+
+**Een 22 kW laadpaal raad ik af voor thuisgebruik.** Vrijwel geen enkele elektrische auto accepteert meer dan 11 kW AC thuis. De Renault Zoe en de Ioniq 6 zijn uitzonderingen. Een 22 kW thuislader is een oplossing voor een probleem dat 95% van de mensen niet heeft.
+
+**Mijn keuze:** 1-fase 32A (7,4 kW) voor huishoudens met één auto en een 1-fase aansluiting. 3-fase 16A (11 kW) als je de aansluiting al hebt en een auto die 11 kW accepteert. Die grens is voor mij helder — geen upgrade nodig als de situatie het niet vraagt.
+
 ## Conclusie
 
 Voor de meeste Nederlandse thuissituaties is een **1-fase laadpaal met 32A (7,4 kW)** volledig voldoende. Je laadt elke nacht meer dan genoeg bij voor je dagelijkse kilometers.

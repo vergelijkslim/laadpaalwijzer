@@ -235,6 +235,14 @@ Als huurder kun je niet zelf een laadpaal laten installeren zonder toestemming v
 
 ---
 
+## Dit raad ik af
+
+**Zelf installeren raad ik af, ook al is het technisch mogelijk.** Voor de SEEH-subsidie is een gecertificeerde installateur verplicht. Bovendien vervalt de garantie van de meeste laadpalen bij zelfinstallatie. Je bespaart €300–€500 aan installatiekosten maar verliest €1.500 subsidie. Dat is geen slimme rekensom.
+
+**De goedkoopste installateur raad ik af.** Laadpaalinstallatie lijkt eenvoudig maar het loopt regelmatig mis bij de groepenkast-aansluiting, de kabelrouting en de netaanmelding bij de netbeheerder. Een ervaren installateur doet dit in twee uur foutloos; een onervaren partij brengt je achteraf terug voor herstelwerk dat net zo duur is als de installatie zelf.
+
+**Mijn keuze:** Vraag drie offertes op, kies de middenprijs, en controleer of de netbeheerder-aanmelding in de offerte zit. Die aanmelding is verplicht (P1-meter, slimme meter), en je wilt niet achteraf ontdekken dat jij dat zelf moet regelen.
+
 ## Volgende stap
 
 Wil je precies weten wat een laadpaal bij jou thuis kost? Vraag een vrijblijvende offerte aan en ontvang binnen 24 uur een prijsopgave op maat van een gecertificeerde installateur in jouw regio.

@@ -319,6 +319,14 @@ Technisch is dat mogelijk, maar wij raden het af. Je mist garantie, de installat
 
 ---
 
+## Dit raad ik af
+
+**Ik raad af om een laadpaal te kopen zonder eerst je aansluiting te controleren.** Meer dan een derde van de huizenbezitters weet niet of ze 1-fase of 3-fase heeft. Als je een 3-fase laadpaal koopt maar een 1-fase aansluiting hebt, laad je maximaal 7,4 kW — geen probleem, maar dan heb je onnodig betaald voor 3-fase hardware. Bel je netbeheerder of kijk op je meterkast.
+
+**Ik raad ook af om te vergelijken op laadvermogen alleen.** 22 kW klinkt beter dan 11 kW, maar de meeste elektrische auto's accepteren thuis maximaal 11 kW AC-laden. 22 kW installerenscoort je alleen punten op het spec-sheet. Focus op software, app-ervaring, garantie en de totale installatiekosten.
+
+**Mijn keuze:** Zaptec Go voor wie niet weet wat te kiezen. Het is de paal die ik zou aanbevelen aan een vriend: goede functies, installateurvriendelijk, en de ingebouwde DC-lekstroom bespaart je €150–€200 op de installatiefactuur. Als design echt telt: Easee Home.
+
 ## Klaar om een laadpaal te laten installeren?
 
 Installatieprijzen verschillen sterk per installateur — tot €500 verschil voor exact hetzelfde werk. Vraag gratis offertes aan en vergelijk:

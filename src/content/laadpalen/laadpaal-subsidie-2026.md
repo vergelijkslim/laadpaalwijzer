@@ -138,6 +138,14 @@ Bij de meeste regelingen: vóór of tijdens de installatie. Achteraf aanvragen i
 
 ---
 
+## Dit raad ik af
+
+**Ik raad af om te wachten op "meer subsidie later".** De trend is duidelijk: nationale laadpaalsubsidie voor particulieren is al grotendeels verdwenen. Gemeentelijke regelingen worden elk jaar krapper. De beste subsidie is die van nu, niet die van volgend jaar.
+
+**Ik raad ook af om subsidie als primaire reden te nemen om een laadpaal te kopen.** Een laadpaal verdient zichzelf terug door de besparing op laden (thuis vs publiek). De subsidie versnelt die terugverdientijd maar is niet de businesscase. Koop een laadpaal als je regelmatig elektrisch rijdt — de subsidie is meegenomen, niet het argument.
+
+**Mijn keuze:** Vraag subsidie altijd voor installatie aan, nooit achteraf. En vergelijk zakelijke opties als je in de buurt komt van 1 auto op naam van de zaak — de bijtellingsregeling en MIA/VAMIL maken de rekening dan heel anders.
+
 *Klaar om een laadpaal te kopen? Bekijk onze [Top 5 Beste Laadpalen 2026](/beste-laadpaal-thuis) of vraag direct een offerte aan via onze partners.*
 
 ---
