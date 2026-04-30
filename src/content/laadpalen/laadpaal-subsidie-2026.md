@@ -2,6 +2,8 @@
 title: "Laadpaal Subsidie 2026: Alle Regelingen Op Een Rij"
 slug: "laadpaal-subsidie-2026"
 description: "Welke subsidie kun je krijgen voor een laadpaal thuis in 2026? Overzicht van alle regelingen: SEEH, gemeentelijke subsidies en teruggave mogelijkheden."
+og_title: "Laadpaal Subsidie 2026 — Alle Regelingen Op Een Rij"
+og_description: "Hoeveel subsidie kun je krijgen voor een thuislaadpaal in 2026? SEEH, gemeentelijke regelingen en belastingvoordelen uitgelegd. Inclusief aanvraagstappen."
 keywords:
   - laadpaal subsidie 2026
   - subsidie laadpaal thuis
@@ -11,7 +13,7 @@ keywords:
 type: informational
 cluster: subsidies
 publish_date: 2026-04-22
-last_updated: 2026-04-22
+last_updated: 2026-04-30
 author: LaadpaalWijzer Redactie
 ---
 
@@ -112,7 +114,7 @@ De slimste investering in 2026: laadpaal + zonnepanelen. Je rijdt dan op eigen o
 
 Een gemiddelde elektrische auto rijdt 15.000 km per jaar en verbruikt ~18 kWh/100 km → **2.700 kWh/jaar aan laadstroom**. Bij €0,25/kWh is dat €675/jaar. Met eigen zonnestroom: bijna gratis.
 
-*Meer lezen over de zonnepanelen + laadpaal combinatie: [Laadpaal met Zonnepanelen: Zo Combineer Je Het](/laadpaal-zonnepanelen-combineren)*
+*Meer lezen over de zonnepanelen + laadpaal combinatie: [Laadpaal met Zonnepanelen: Zo Combineer Je Het](/laadpalen/laadpaal-zonnepanelen-combineren)*
 
 ## Stappenplan: zo pak je subsidie aan
 
@@ -146,7 +148,7 @@ Bij de meeste regelingen: vóór of tijdens de installatie. Achteraf aanvragen i
 
 **Mijn keuze:** Vraag subsidie altijd voor installatie aan, nooit achteraf. En vergelijk zakelijke opties als je in de buurt komt van 1 auto op naam van de zaak — de bijtellingsregeling en MIA/VAMIL maken de rekening dan heel anders.
 
-*Klaar om een laadpaal te kopen? Bekijk onze [Top 5 Beste Laadpalen 2026](/beste-laadpaal-thuis) of vraag direct een offerte aan via onze partners.*
+*Klaar om een laadpaal te kopen? Bekijk onze [Top 5 Beste Laadpalen 2026](/laadpalen/beste-laadpaal-thuis) of vraag direct een offerte aan via onze partners.*
 
 ---
 

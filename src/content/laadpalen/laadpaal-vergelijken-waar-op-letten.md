@@ -190,7 +190,7 @@ De IP-waarde geeft aan hoe goed de laadpaal beschermd is tegen water en stof:
 - **IP54:** Beschermd tegen opspattend water vanuit alle richtingen — voldoende voor buitenmontage
 - **IP55:** Beschermd tegen waterstralen — extra bescherming bij blootgestelde locaties
 
-Alle laadpalen in onze [top 5](/beste-laadpaal-thuis) hebben minimaal IP54 en zijn geschikt voor buitengebruik.
+Alle laadpalen in onze [top 5](/laadpalen/beste-laadpaal-thuis) hebben minimaal IP54 en zijn geschikt voor buitengebruik.
 
 ### Aardlekbeveiliging
 Elke laadpaal-installatie vereist een aardlekschakelaar. Er zijn twee opties:
@@ -235,7 +235,7 @@ Voordat je een laadpaal koopt, check deze punten:
 - [ ] **WiFi-bereik bij de laadpaal?** Test of je WiFi-signaal sterk genoeg is.
 - [ ] **VvE-toestemming nodig?** Bij een appartement of gedeeld complex.
 
-→ Lees meer over [installatie en kosten](/laadpaal-thuis-installeren-kosten-subsidie)
+→ Lees meer over [installatie en kosten](/laadpalen/laadpaal-thuis-installeren-kosten-subsidie)
 
 ---
 
@@ -290,7 +290,7 @@ Gebruik deze checklist om de laadpaal te vinden die bij jou past:
 | Zakelijk gebruik, MID-meter nodig | Alfen Eve Single S-Line |
 | Compleet energiemanagementsysteem | Smappee EV Wall |
 
-→ [Bekijk onze volledige vergelijking](/beste-laadpaal-thuis)
+→ [Bekijk onze volledige vergelijking](/laadpalen/beste-laadpaal-thuis)
 → [Vraag een vrijblijvende offerte aan](/offerte)
 
 ---

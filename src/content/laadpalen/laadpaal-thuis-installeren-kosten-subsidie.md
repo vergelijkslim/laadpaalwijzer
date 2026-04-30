@@ -79,7 +79,7 @@ De prijs van de laadpaal zelf verschilt sterk per merk en model. Hieronder de ac
 
 **Let op:** bij laadpalen zonder vaste kabel komt er €150–€350 extra bij voor een losse Type 2 kabel. Reken hier dus mee bij je budgetplanning.
 
-→ [Bekijk onze volledige vergelijking van de beste laadpalen](/beste-laadpaal-thuis)
+→ [Bekijk onze volledige vergelijking van de beste laadpalen](/laadpalen/beste-laadpaal-thuis)
 
 ### Slim vs. basis: wat is het verschil?
 
@@ -130,7 +130,7 @@ Gecertificeerde installateurs zijn geregistreerd bij Stichting InstallQ of UNETO
 De uiteindelijke prijs van je thuislaadpaal-installatie wordt bepaald door vijf factoren:
 
 ### 1. Keuze laadpaal
-De range is breed: van €500 voor een basismodel tot €1.200+ voor een premium laadpaal met energiemanagement. Zie onze [vergelijking](/beste-laadpaal-thuis) voor hulp bij het kiezen.
+De range is breed: van €500 voor een basismodel tot €1.200+ voor een premium laadpaal met energiemanagement. Zie onze [vergelijking](/laadpalen/beste-laadpaal-thuis) voor hulp bij het kiezen.
 
 ### 2. Afstand meterkast tot laadpaal
 Hoe verder de laadpaal van je meterkast staat, hoe meer kabel er nodig is. Elke extra meter kost €15–€25 aan materiaal en arbeid. Ideaal is een afstand van minder dan 10 meter.
@@ -248,8 +248,8 @@ Als huurder kun je niet zelf een laadpaal laten installeren zonder toestemming v
 Wil je precies weten wat een laadpaal bij jou thuis kost? Vraag een vrijblijvende offerte aan en ontvang binnen 24 uur een prijsopgave op maat van een gecertificeerde installateur in jouw regio.
 
 → [Vraag een vrijblijvende offerte aan](/offerte)
-→ [Vergelijk de beste laadpalen van 2026](/beste-laadpaal-thuis)
-→ [Lees onze koopgids: waar moet je op letten?](/laadpaal-vergelijken-waar-op-letten)
+→ [Vergelijk de beste laadpalen van 2026](/laadpalen/beste-laadpaal-thuis)
+→ [Lees onze koopgids: waar moet je op letten?](/laadpalen/laadpaal-vergelijken-waar-op-letten)
 
 
 ---

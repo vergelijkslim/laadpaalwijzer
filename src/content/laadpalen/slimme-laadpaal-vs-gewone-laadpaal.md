@@ -2,6 +2,8 @@
 title: "Slimme Laadpaal vs Gewone Laadpaal: Wat is het Verschil? (2026)"
 slug: "slimme-laadpaal-vs-gewone-laadpaal"
 description: "Slimme laadpaal of gewone laadpaal? We leggen uit wat het verschil is, wat het extra kost en wanneer een slimme laadpaal de investering waard is."
+og_title: "Slimme Laadpaal vs Gewone Laadpaal 2026 — Wat is het Verschil?"
+og_description: "Heb je een slimme laadpaal nodig of is een gewone goedkoper alternatief? We leggen het verschil uit: functies, kosten en wanneer slim laden loont."
 keywords:
   - slimme laadpaal
   - slimme laadpaal vs gewone laadpaal
@@ -11,7 +13,7 @@ keywords:
 type: comparison
 cluster: vergelijken
 publish_date: 2026-04-22
-last_updated: 2026-04-22
+last_updated: 2026-04-30
 author: LaadpaalWijzer Redactie
 ---
 
@@ -64,7 +66,7 @@ Dit is waar een slimme laadpaal echt schittert. De paal detecteert hoeveel zonne
 
 **Voorbeeld:** Je gebruikt 1.500W in huis, je panelen wekken 3.200W op. Overschot: 1.700W. De slimme laadpaal gebruikt die 1.700W direct om je auto op te laden.
 
-*Meer over deze combinatie: [Laadpaal met Zonnepanelen Combineren](/laadpaal-zonnepanelen-combineren)*
+*Meer over deze combinatie: [Laadpaal met Zonnepanelen Combineren](/laadpalen/laadpaal-zonnepanelen-combineren)*
 
 ### 3. Loadbalancing (capaciteitsbeheer)
 
@@ -109,7 +111,7 @@ Goede instapkeuze in de slimme categorie. Minder features dan Alfen of Easee, ma
 - Loadbalancing: ja
 - Prijs: ~€599 (exclusief installatie)
 
-*Volledige vergelijking: [Top 5 Beste Laadpalen 2026](/beste-laadpaal-thuis)*
+*Volledige vergelijking: [Top 5 Beste Laadpalen 2026](/laadpalen/beste-laadpaal-thuis)*
 
 ## Wanneer is een gewone laadpaal beter?
 
@@ -149,7 +151,7 @@ Gemiddeld 10-15 jaar. Door software-updates blijven slimme laadpalen ook na jare
 
 ---
 
-*Klaar om te kiezen? Bekijk onze [Top 5 Beste Laadpalen 2026](/beste-laadpaal-thuis) of lees over de [subsidies voor laadpalen in 2026](/laadpaal-subsidie-2026).*
+*Klaar om te kiezen? Bekijk onze [Top 5 Beste Laadpalen 2026](/laadpalen/beste-laadpaal-thuis) of lees over de [subsidies voor laadpalen in 2026](/laadpalen/laadpaal-subsidie-2026).*
 
 ---
 
